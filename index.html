@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>THE LIPSINKERS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="LipSinkers,London,drag,lipsync,cabaret,queer,cult,group,duckie,clapham,two,brewers,lisa,lee,steve,nice,thom,shaw,rhys,pieces,claud,palazzo,sean,murray,carl,harrison" />
+  <meta name="description" content="TheLipSinkers" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Helvetica, sans-serif;
+      background: #ccc url("images/twinklingstars.gif") repeat;
+    }
+
+a, a:visited, a:active {
+  color: #000 !important;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff3399 !important;
+  text-decoration: none !important;
+}
+
+    .header {
+      background-color: black;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      border: 3px solid black;
+    }
+
+   .topnav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      flex-wrap: wrap;
+    }
+    
+    .topnav.responsive #navLinks {
+  border-bottom: 3px solid black;
+}
+
+    .brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff0033;
+      height: 24px;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand img {
+      height: 24px;
+      width: auto;
+    }
+
+    #navLinks {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    #navLinks a {
+      font-size: 20px;
+      font-weight: bold;
+      color: white !important;
+    }
+
+    #navLinks a:hover {
+      color: #ff3399 !important;
+      text-decoration: none !important;
+    }
+
+    .icon {
+      display: none;
+      cursor: pointer;
+    }
+
+    .icon div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+    }
+
+    .main-content {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .image-container {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-content video {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+    
+.section-box {
+  background-color: #ff00ff;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0px 20px 0 20px;
+  margin: 20px 0;
+  border: 3px solid black;  /* This stays */
+}
+
+.red {
+  background-color: red;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  
+}
+
+
+    .red .scroll-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .content-wrapper {
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .section-link {
+      display: block;
+      width: 100%;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      margin: 10px 0;
+      text-decoration: none;
+      color: black;
+      border: 3px solid black;
+    }
+
+    .yellow { background-color: #ffcc00; }
+    .pink { background-color: #ff3399; }
+    .blue { background-color: #66ccff; }
+    .green { background-color: #66ff66; }
+    .white { background-color: #ffffff; }
+    
+    .section-box.yellow {
+    font-size: 18px;
+  }
+  
+    .section-box.pink {
+    font-size: 18px;
+  }
+  
+    .section-box.blue {
+    font-size: 18px;
+  }
+  
+  .upcoming-details {
+  font-size: 18px;
+  
+  margin-top: 10px;     /* adds space between UPCOMING and details */
+}
+  
+    .section-box.green {
+    font-size: 18px;
+  }
+
+  
+    .section-box.white {
+  background-color: #fff;
+  border: 3px solid black; /* ✅ add this */
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+    .section-link.yellow {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: left;
+      padding: 15px;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.8;
+    }
+
+    .section-link.yellow .quote {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 18px;
+      display: inline;
+      color: #ff3399;
+    }
+
+    .section-link.yellow .attribution {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      display: inline;
+      margin-left: 5px;
+      color: white;
+    }
+
+    .section-link.yellow .testimonial {
+      margin-bottom: 15px;
+    }
+
+    .stars {
+      color: #ffcc00;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      display: inline;
+      margin-left: 5px;
+    }
+
+    .section-link.pink {
+      background-color: #ff0000;
+    }
+
+    .section-link.green {
+      background-color: #ff9900;
+    }
+
+    .section-link.blue {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #ffff33;
+    }
+
+    .section-link.blue .upcoming-details {
+      color: white;
+    }
+
+    .section-link.blue .upcoming-details a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .section-link.blue .upcoming-details a:hover {
+      color: #ff3399;
+      text-decoration: none;
+    }
+
+    .section-link.blue .upcoming-details a:hover .event-date,
+    .section-link.blue .upcoming-details a:hover .event-location {
+      color: #ff3399;
+    }
+
+    .section-link.blue .event-date {
+      font-weight: bold;
+      color: white;
+      display: block;
+      margin-bottom: 2px;
+      line-height: 1.2;
+    }
+
+    .section-link.blue .event-location {
+      font-weight: normal;
+      color: white;
+      display: block;
+      line-height: 1.2;
+    }
+
+    .section-link.mailing {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #33ccff !important;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px;
+    }
+
+    a.section-link.mailing:hover {
+      color: #ff3399 !important;
+    }
+
+   
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-top: 0;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      border: none;
+      box-sizing: content-box;
+    }
+
+   @media (max-width: 600px) {
+  #navLinks {
+    display: none;
+    flex-direction: column;
+    background-color: black;
+    width: auto;       /* full viewport width */
+    position: fixed;    /* fixed to viewport, not .topnav */
+    top: 48px;          /* adjust this to your header height */
+    left: 0;
+    right: 0;
+    align-items: flex-start;
+    padding: 10px 0;    /* vertical only */
+    margin: 0;
+    border-left: 3px solid black; 
+    border-right: 3px solid black; 
+  }
+
+  #navLinks a {
+    padding: 0px 16px;
+    width: 100%;
+  }
+
+  .topnav.responsive #navLinks {
+    display: flex;
+  }
+
+  .icon {
+    display: block;
+  }
+
+  .column {
+    width: 100%;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="topnav" id="topnav">
+      <div class="brand"><img src="images/lipsinkers_logo.png" alt="The LipSinkers" /></div>
+
+      <div id="navLinks">
+        <a href="#live-dates">LIVE DATES</a>
+        <a href="/gallery.html">GALLERY</a>
+        <a href="/press.html">PRESS</a>
+        <a href="/contact.html">CONTACT</a>
+      </div>
+
+      <div class="icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="image-container">
+      <img src="images/lipsinkers_lipstrek.png" alt="The LipSinkers" />
+    </div>
+
+    <div class="content-wrapper">
+      <div class="image-container">
+        <video src="images/lipsinkers_perform.mp4" autoplay muted loop></video>
+      </div>
+      
+      <div class="section-link yellow">
+        <div class="testimonial">
+          <span class="quote">"In their hands, drag and character and gender and theatre squelch and writhe together, spilling across the room, gesturing towards unknown pleasures and leaving a glorious mess"</span>
+          <span class="attribution">- Ben Walters, Not Television</span>
+        </div>
+      </div>
+
+<div id="live-dates" class="section-link blue">
+  UPCOMING LIVE DATES
+  <div class="upcoming-details">
+ 
+       <a href="https://www.greenman.net/" target="_blank" rel="noopener noreferrer"><span class="event-date">Friday 21st August</span><span class="event-location">Greenman, Bannau Brycheinog National Park Wales</span></a>
+       
+       <a href="https://www.outsavvy.com/event/35762/the-lipsinkers-at-two-brewers" target="_blank" rel="noopener noreferrer"><span class="event-date">Friday 25th September</span><span class="event-location">Two Brewers, Clapham</span></a>
+          
+       <a href="https://www.outsavvy.com/event/35762/the-lipsinkers-at-two-brewers" target="_blank" rel="noopener noreferrer"><span class="event-date">Friday 23rd October</span><span class="event-location">Two Brewers, Clapham</span></a>
+            
+       <a href="https://www.outsavvy.com/event/35762/the-lipsinkers-at-two-brewers" target="_blank" rel="noopener noreferrer"><span class="event-date">Friday 20th November</span><span class="event-location">Two Brewers, Clapham</span></a>
+    
+  </div>
+</div>
+
+<a href="https://thelipsinkers.us2.list-manage.com/subscribe?u=aadf8a23ab79f616758033a1c&id=9101aa2419" class="section-link mailing" target="_blank" rel="noopener noreferrer">
+  JOIN OUR MAILING LIST HERE
+</a>
+
+    </div>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("topnav").classList.toggle("responsive");
+    }
+  </script>
+</body>
+</html>
