@@ -493,6 +493,9 @@ a:hover {
 <img src="images/lipsinkers_christmas_2019.jpg" onclick="openGallery(0)">
 <img src="images/lipsinkers_colchester_arts_centre_2019.jpg" onclick="openGallery(1)">
 <img src="images/lipsinkers_mary_poppin_2019.jpg" onclick="openGallery(2)">
+<img src="images/lipsinkers_2018.jpg" onclick="openGallery(3)">
+  <img src="images/lipsinkers_swirl.jpg" onclick="openGallery(4)">
+  <img src="images/lipsinkers_edinburgh_2015.jpg" onclick="openGallery(5)">
 </div>
 </div>
 
@@ -517,7 +520,7 @@ a:hover {
 <span class="next" onclick="move(1)">&#10095;</span>
 </div></div>
 <script>
-const gallery=['images/lipsinkers_christmas_2019.jpg','images/lipsinkers_colchester_arts_centre_2019.jpg','images/lipsinkers_mary_poppin_2019.jpg'];
+const gallery=['images/lipsinkers_christmas_2019.jpg','images/lipsinkers_colchester_arts_centre_2019.jpg','images/lipsinkers_mary_poppin_2019.jpg','images/lipsinkers_2018.jpg','images/lipsinkers_swirl','images/lipsinkers_edinburgh_2015'];
 let current=0;
 function openGallery(i){current=i;document.getElementById('galleryImage').src=gallery[i];document.getElementById('lightbox').classList.add('active');}
 function closeGallery(){document.getElementById('lightbox').classList.remove('active');}
