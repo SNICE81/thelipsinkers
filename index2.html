@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>The LipSinkers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="LipSinkers,London,drag,lipsync,cabaret,queer,cult,group,duckie,clapham,two,brewers,lisa,lee,steve,nice,thom,shaw,rhys,pieces,claud,palazzo,sean,murray,carl,harrison" />
+  <meta name="description" content="TheLipSinkers" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Helvetica, sans-serif;
+      background: #ccc url("images/twinklingstars.gif") repeat;
+    }
+
+a, a:visited, a:active {
+  color: #000 !important;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff3399 !important;
+  text-decoration: none !important;
+}
+
+    .header {
+      background-color: black;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+        }
+
+   .topnav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      flex-wrap: wrap;
+    }
+    
+    .topnav.responsive #navLinks {
+  border-bottom: 3px solid black;
+}
+
+    .brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff0033;
+      height: 24px;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand img {
+      height: 24px;
+      width: auto;
+    }
+
+    #navLinks {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    #navLinks a {
+      font-size: 20px;
+      font-weight: bold;
+      color: white !important;
+    }
+
+    #navLinks a:hover {
+      color: #ff3399 !important;
+      text-decoration: none !important;
+    }
+
+    .icon {
+      display: none;
+      cursor: pointer;
+    }
+
+    .icon div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+    }
+
+    .main-content {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .image-container {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-content video {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+    
+.section-box {
+  background-color: #ff00ff;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0px 20px 0 20px;
+  margin: 20px 0;
+}
+
+.red {
+  background-color: red;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  
+}
+
+
+    .red .scroll-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .content-wrapper {
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .section-link {
+      display: block;
+      width: 100%;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      margin: 10px 0;
+      text-decoration: none;
+      color: black;
+        }
+
+    .yellow { background-color: #ffcc00; }
+    .pink { background-color: #ff3399 !important; }
+    .blue { background-color: #66ccff; }
+    .green { background-color: #66ff66; }
+    .white { background-color: #ffffff; }
+    
+    .section-box.yellow {
+    font-size: 18px;
+  }
+  
+    .section-box.pink {
+    font-size: 18px;
+  }
+  
+    .section-box.blue {
+    font-size: 18px;
+  }
+  
+  .upcoming-details {
+  font-size: 18px;
+  
+  margin-top: 10px;     /* adds space between UPCOMING and details */
+}
+  
+    .section-box.green {
+    font-size: 18px;
+  }
+
+  
+    .section-box.white {
+  background-color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+    .section-link.yellow {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: left;
+      padding: 15px;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.8;
+    }
+
+    .section-link.yellow .quote {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 18px;
+      display: block;
+      color: #ff3399 !important;
+      text-align: justify;
+      text-align-last: center;
+    }
+
+    .section-link.yellow .attribution {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      display: block;
+      margin: 8px 0 0;
+      text-align: center;
+      color: white;
+    }
+
+    .section-link.yellow .testimonial {
+      margin-bottom: 15px;
+    }
+
+    .review {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .review .stars {
+      display: block;
+      margin: 0;
+      color: #ffff33;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .review .attribution {
+      display: block;
+      margin-top: 2px;
+      margin-left: 0;
+      color: white;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .stars {
+      color: #ffcc00;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      display: inline;
+      margin-left: 5px;
+    }
+
+    .section-link.pink {
+      background-color: #ff0000;
+    }
+
+    .section-link.green {
+      background-color: #ff9900;
+    }
+
+    .section-link.blue {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #33ccff;
+    }
+
+    .section-link.blue .upcoming-details {
+      color: white;
+    }
+
+    .section-link.blue .upcoming-details a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .section-link.blue .upcoming-details a:hover {
+      color: #ff3399;
+      text-decoration: none;
+    }
+
+    .section-link.blue .upcoming-details a:hover .event-date,
+    .section-link.blue .upcoming-details a:hover .event-location {
+      color: #ff3399;
+    }
+
+    .section-link.blue .event-date {
+      font-weight: bold;
+      color: #ffff33;
+      display: block;
+      margin-bottom: 2px;
+      line-height: 1.2;
+    }
+
+    .section-link.blue .event-location {
+      font-weight: normal;
+      color: white;
+      display: block;
+      line-height: 1.2;
+    }
+
+    .section-link.mailing {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #ff3399 !important;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px;
+    }
+
+    a.section-link.mailing:hover {
+      color: #ff3399 !important;
+    }
+
+   
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-top: 0;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      border: none;
+      box-sizing: content-box;
+    }
+
+   @media (max-width: 600px) {
+  #navLinks {
+    display: none;
+    flex-direction: column;
+    background-color: black;
+    width: auto;       /* full viewport width */
+    position: fixed;    /* fixed to viewport, not .topnav */
+    top: 48px;          /* adjust this to your header height */
+    left: 0;
+    right: 0;
+    align-items: flex-start;
+    padding: 10px 0;    /* vertical only */
+    margin: 0;
+    border-left: 3px solid black; 
+    border-right: 3px solid black; 
+  }
+
+  #navLinks a {
+    padding: 0px 16px;
+    width: 100%;
+  }
+
+  .topnav.responsive #navLinks {
+    display: flex;
+  }
+
+  .icon {
+    display: block;
+  }
+
+  .column {
+    width: 100%;
+  }
+}
+  
+
+/* ===== GIG POSTERS ===== */
+.gig-section{margin:20px 0;}
+.gig-heading{background:#33ccff;color:#000;font-size:28px;font-weight:bold;text-align:center;padding:14px;}
+.event-card{display:flex;align-items:center;gap:18px;background:#111;color:#fff !important;margin-top:8px;padding:16px;border-left:8px solid #ff3399;transition:.2s;}
+.event-card:hover{background:#222;border-left-color:#ffff33;transform:translateX(6px);}
+.event-date{width:110px;flex-shrink:0;color:#ffff33;font-weight:bold;font-size:26px;line-height:1;}
+.event-info{flex:1;}
+.event-title{font-size:24px;font-weight:bold;letter-spacing:1px;}
+.event-location{margin-top:4px;color:#ddd;font-size:16px;}
+.event-arrow{color:#ff3399;font-size:34px;font-weight:bold;}
+@media(max-width:600px){
+.event-card{flex-direction:column;align-items:flex-start;}
+.event-date{width:auto;}
+.event-arrow{display:none;}
+}
+
+/* Gallery */
+.gallery-section{margin:20px 0;}
+.gallery-title{background:#ff3399;color:#000;font-size:24px;font-weight:bold;text-align:center;padding:10px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px;}
+.gallery-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:pointer;display:block;}
+@media(max-width:600px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:5000;align-items:center;justify-content:center;}
+.lightbox.active{display:flex;}
+.lightbox-content{position:relative;width:min(600px,100%);padding:0 20px;}
+.lightbox img{width:100%;height:auto;display:block;}
+.close,.prev,.next{position:absolute;color:#fff;font-size:40px;cursor:pointer;user-select:none;}
+.close{top:-10px;right:25px;}
+.prev{left:-5px;top:50%;transform:translateY(-50%);}
+.next{right:-5px;top:50%;transform:translateY(-50%);}
+
+</style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="topnav" id="topnav">
+      <div class="brand"><img src="images/lipsinkers_logo.png" alt="The LipSinkers" /></div>
+
+      <div id="navLinks">
+        <a href="#live-dates">LIVE DATES</a>
+        <a href="#gallery">GALLERY</a>
+        <a href="/press.html">PRESS</a>
+        <a href="/contact.html">CONTACT</a>
+      </div>
+
+      <div class="icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="image-container">
+      <img src="images/lipsinkers_lipstrek.png" alt="The LipSinkers" />
+    </div>
+
+    <div class="content-wrapper">
+      <div class="image-container">
+        <video src="images/lipsinkers_perform.mp4" autoplay muted loop></video>
+      </div>
+      
+      <div class="section-link yellow">
+        <div class="testimonial">
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <div class="attribution">- The Times</div>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <div class="attribution">- Time Out</div>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <div class="attribution">- The Scotsman</div>
+          </div>
+
+          <span class="quote">"In their hands, drag and character and gender and theatre squelch and writhe together, spilling across the room, gesturing towards unknown pleasures and leaving a glorious mess"</span>
+          <span class="attribution">- Ben Walters, Not Television</span>
+        </div>
+      </div>
+
+
+<div class="image-container">
+  <img src="images/lipsinkers_gay_shame_26_1.jpg" alt="The LipSinkers performing" />
+</div>
+
+<div id="live-dates" class="gig-section">
+<div class="gig-heading">UPCOMING LIVE DATES</div>
+
+<a class="event-card" href="https://www.greenman.net/" target="_blank" rel="noopener noreferrer">
+<div class="event-date">FRI<br>21 AUG</div>
+<div class="event-info">
+<div class="event-title">GREEN MAN FESTIVAL</div>
+<div class="event-location">Bannau Brycheiniog National Park, Wales</div>
+</div>
+<div class="event-arrow">→</div>
+</a>
+
+<a class="event-card" href="https://www.outsavvy.com/event/35762/the-lipsinkers-at-two-brewers" target="_blank" rel="noopener noreferrer">
+<div class="event-date">FRI<br>25 SEP</div>
+<div class="event-info">
+<div class="event-title">TWO BREWERS</div>
+<div class="event-location">Clapham, London</div>
+</div>
+<div class="event-arrow">→</div>
+</a>
+
+<a class="event-card" href="https://www.outsavvy.com/event/35762/the-lipsinkers-at-two-brewers" target="_blank" rel="noopener noreferrer">
+<div class="event-date">FRI<br>23 OCT</div>
+<div class="event-info">
+<div class="event-title">TWO BREWERS</div>
+<div class="event-location">Clapham, London</div>
+</div>
+<div class="event-arrow">→</div>
+</a>
+
+<a class="event-card" href="https://www.outsavvy.com/event/35762/the-lipsinkers-at-two-brewers" target="_blank" rel="noopener noreferrer">
+<div class="event-date">FRI<br>20 NOV</div>
+<div class="event-info">
+<div class="event-title">TWO BREWERS</div>
+<div class="event-location">Clapham, London</div>
+</div>
+<div class="event-arrow">→</div>
+</a>
+
+</div>
+
+
+<div id="gallery" class="gallery-section">
+<div class="gallery-grid">
+<img src="images/lipsinkers_gay_shame_26_3.jpg" onclick="openGallery(0)">
+<img src="images/lipsinkers_gay_shame_26_4.jpg" onclick="openGallery(1)">
+  <img src="images/lipsinkers_gay_shame_26_5.jpg" onclick="openGallery(2)">
+  <img src="images/lipsinkers_gay_shame_26_6.jpg" onclick="openGallery(3)">
+  <img src="images/lipsinkers_two_brewers_bleach.jpg" onclick="openGallery(4)">
+    <img src="images/lipsinkers_laundry.jpg" onclick="openGallery(5)">
+  <img src="images/lipsinkers_christmas_2019.jpg" onclick="openGallery(6)">
+<img src="images/lipsinkers_colchester_arts_centre_2019.jpg" onclick="openGallery(7)">
+<img src="images/lipsinkers_mary_poppin_2019.jpg" onclick="openGallery(8)">
+<img src="images/lipsinkers_2018.jpg" onclick="openGallery(9)">
+<img src="images/lipsinkers_swirl.jpg" onclick="openGallery(10)">
+<img src="images/lipsinkers_edinburgh_2015.jpg" onclick="openGallery(11)">
+  <img src="images/lipsinkers_evolution_poster.jpg" onclick="openGallery(12)">
+  <img src="images/lipsinkers_guilty_pleasures_pulp.jpg" onclick="openGallery(13)">
+  <img src="images/lipsinkers_guilty_pleasures_lisa_lee.jpg" onclick="openGallery(14)">
+   <img src="images/lipsinkers_benefit_1.jpg" onclick="openGallery(15)">
+   <img src="images/lipsinkers_benefit_2.jpg" onclick="openGallery(16)">
+   <img src="images/lipsinkers_2014.jpg" onclick="openGallery(17)">
+   <img src="images/lipsinkers_rvt.jpg" onclick="openGallery(18)">
+   <img src="images/lipsinkers_simon_harris.jpg" onclick="openGallery(19)">
+   <img src="images/lipsinkers_original.jpg" onclick="openGallery(20)">
+</div>
+</div>
+
+<a href="https://thelipsinkers.us2.list-manage.com/subscribe?u=aadf8a23ab79f616758033a1c&id=9101aa2419" class="section-link mailing" target="_blank" rel="noopener noreferrer">
+  JOIN OUR MAILING LIST HERE
+</a>
+
+    </div>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("topnav").classList.toggle("responsive");
+    }
+  </script>
+
+<div class="lightbox" id="lightbox">
+<div class="lightbox-content">
+<span class="close" onclick="closeGallery()">&times;</span>
+<span class="prev" onclick="move(-1)">&#10094;</span>
+<img id="galleryImage">
+<span class="next" onclick="move(1)">&#10095;</span>
+</div></div>
+<script>
+const gallery=['images/lipsinkers_gay_shame_26_3.jpg','images/lipsinkers_gay_shame_26_4.jpg','images/lipsinkers_gay_shame_26_5.jpg','images/lipsinkers_gay_shame_26_6.jpg','images/lipsinkers_two_brewers_bleach.jpg','images/lipsinkers_laundry.jpg','images/lipsinkers_christmas_2019.jpg','images/lipsinkers_colchester_arts_centre_2019.jpg','images/lipsinkers_mary_poppin_2019.jpg','images/lipsinkers_2018.jpg','images/lipsinkers_swirl.jpg','images/lipsinkers_edinburgh_2015.jpg','images/lipsinkers_evolution_poster.jpg','images/lipsinkers_guilty_pleasures_pulp.jpg','images/lipsinkers_guilty_pleasures_lisa_lee.jpg','images/lipsinkers_benefit_1.jpg','images/lipsinkers_benefit_2.jpg','images/lipsinkers_2014.jpg','images/lipsinkers_rvt.jpg','images/lipsinkers_simon_harris.jpg','images/lipsinkers_original.jpg',];
+let current=0;
+function openGallery(i){current=i;document.getElementById('galleryImage').src=gallery[i];document.getElementById('lightbox').classList.add('active');}
+function closeGallery(){document.getElementById('lightbox').classList.remove('active');}
+function move(d){current=(current+d+gallery.length)%gallery.length;document.getElementById('galleryImage').src=gallery[current];}
+document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').classList.contains('active'))return;
+if(e.key==='Escape')closeGallery();
+if(e.key==='ArrowLeft')move(-1);
+if(e.key==='ArrowRight')move(1);});
+</script>
+
+</body>
+</html>
