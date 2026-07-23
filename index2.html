@@ -32,6 +32,7 @@ a:hover {
 
     .header {
       background-color: black;
+      border:3px solid black;
       position: sticky;
       top: 0;
       width: 100%;
@@ -401,7 +402,7 @@ a:hover {
 
 /* ===== GIG POSTERS ===== */
 .gig-section{margin:20px 0;}
-.gig-heading{background:rgba(0,0,0,.5);color:#ffff33;font-size:28px;font-weight:bold;text-align:center;padding:14px;}
+.gig-heading{background:rgba(0,0,0,.5);color:#33ccff;font-size:28px;font-weight:bold;text-align:center;padding:14px;}
 .event-card{display:flex;align-items:center;gap:18px;background:#111;color:#fff !important;margin-top:8px;padding:16px;transition:.2s;}
 .event-card:hover{background:#222;}
 .event-date{width:110px;flex-shrink:0;color:#ffff33;font-weight:bold;font-size:26px;line-height:1;}
@@ -410,9 +411,28 @@ a:hover {
 .event-location{margin-top:4px;color:#fff;font-size:16px;}
 .event-arrow{color:#ff3399;font-size:34px;font-weight:bold;}
 @media(max-width:600px){
-.event-card{flex-direction:column;align-items:flex-start;}
-.event-date{width:auto;}
-.event-arrow{display:none;}
+.event-card{
+display:block;
+}
+.event-date{
+width:auto;
+display:block;
+font-size:30px;
+line-height:1;
+margin-bottom:12px;
+}
+.event-info{
+display:block;
+}
+.event-title{
+font-size:24px;
+}
+.event-location{
+font-size:16px;
+}
+.event-arrow{
+display:none;
+}
 }
 
 /* Gallery */
@@ -498,7 +518,7 @@ a:hover {
 <div class="gig-heading">UPCOMING LIVE DATES</div>
 
 <a class="event-card" href="https://www.greenman.net/" target="_blank" rel="noopener noreferrer">
-<div class="event-date">FRI<br>21 AUG</div>
+<div class="event-date">FRI 21 AUG</div>
 <div class="event-info">
 <div class="event-title">GREEN MAN FESTIVAL</div>
 <div class="event-location">Bannau Brycheiniog National Park, Wales</div>
@@ -507,7 +527,7 @@ a:hover {
 </a>
 
 <a class="event-card" href="https://www.outsavvy.com/event/35762/the-lipsinkers-at-two-brewers" target="_blank" rel="noopener noreferrer">
-<div class="event-date">FRI<br>25 SEP</div>
+<div class="event-date">FRI 25 SEP</div>
 <div class="event-info">
 <div class="event-title">TWO BREWERS</div>
 <div class="event-location">Clapham, London</div>
@@ -516,7 +536,7 @@ a:hover {
 </a>
 
 <a class="event-card" href="https://www.outsavvy.com/event/35762/the-lipsinkers-at-two-brewers" target="_blank" rel="noopener noreferrer">
-<div class="event-date">FRI<br>23 OCT</div>
+<div class="event-date">FRI 23 OCT</div>
 <div class="event-info">
 <div class="event-title">TWO BREWERS</div>
 <div class="event-location">Clapham, London</div>
@@ -525,7 +545,7 @@ a:hover {
 </a>
 
 <a class="event-card" href="https://www.outsavvy.com/event/35762/the-lipsinkers-at-two-brewers" target="_blank" rel="noopener noreferrer">
-<div class="event-date">FRI<br>20 NOV</div>
+<div class="event-date">FRI 20 NOV</div>
 <div class="event-info">
 <div class="event-title">TWO BREWERS</div>
 <div class="event-location">Clapham, London</div>
