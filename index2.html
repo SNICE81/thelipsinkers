@@ -450,6 +450,37 @@ display:none;
 .prev{left:-5px;top:50%;transform:translateY(-50%);}
 .next{right:-5px;top:50%;transform:translateY(-50%);}
 
+
+
+/* Contact card responsive */
+.contact-details a{
+    overflow-wrap:anywhere;
+    word-break:break-word;
+}
+
+@media (max-width:600px){
+    .contact-card{
+        display:block !important;
+        text-align:center;
+    }
+    .contact-photo{
+        width:240px !important;
+        max-width:80%;
+        margin:0 auto 24px auto;
+    }
+    .contact-details{
+        text-align:center;
+    }
+    .contact-details .event-title{
+        letter-spacing:2px !important;
+        margin-bottom:20px !important;
+    }
+    .contact-details .event-location{
+        font-size:16px !important;
+        line-height:1.8 !important;
+    }
+}
+
 </style>
 </head>
 
@@ -607,11 +638,11 @@ display:none;
 
 <div class="gig-heading">FOR ENQUIRIES &amp; BOOKINGS</div>
 
-<div class="event-card" style="display:flex;align-items:center;gap:24px;cursor:default;">
-<div style="width:170px;flex-shrink:0;">
+<div class="event-card" class="contact-card" style="display:flex;align-items:center;gap:24px;cursor:default;">
+<div class="contact-photo" style="width:170px;flex-shrink:0;">
 <img src="images/lisa_galore.jpg" alt="Lisa Galore" style="display:block;width:100%;height:auto;">
 </div>
-<div style="flex:1;">
+<div class="contact-details" style="flex:1;">
 <div class="event-title" style="margin-bottom:10px;letter-spacing:3px;">LISA LEE</div>
 <div class="event-location" style="font-size:18px;line-height:2;">
 <a href="mailto:lisalee@rudegrrl.net" style="color:white !important;font-weight:bold;text-decoration:none;">✉ lisalee@rudegrrl.net</a><br>
