@@ -454,19 +454,19 @@ display:none;
 
 /* Contact card responsive */
 .contact-details a{
-    overflow-wrap:anywhere;
-    word-break:break-word;
+    white-space:nowrap;
 }
 
 @media (max-width:600px){
     .contact-card{
-        display:block !important;
+        display:flex !important;
+        flex-direction:column;
         text-align:center;
     }
     .contact-photo{
         width:240px !important;
         max-width:80%;
-        margin:0 auto 24px auto;
+        margin:0 auto 24px;
     }
     .contact-details{
         text-align:center;
@@ -480,6 +480,21 @@ display:none;
         line-height:1.8 !important;
     }
 }
+
+
+/* ===== Lobster ===== */
+.lobster-container{text-align:center;margin:40px 0;}
+.lobster-container img{display:block;width:36.7%;height:auto;margin:0 auto;cursor:pointer;}
+@media (min-width:601px){
+  .lobster-container img{width:auto;max-width:none;}
+}
+@media (max-width:600px){
+  .lobster-container img{width:36.7%;max-width:none;}
+}
+.lobster-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;justify-content:center;align-items:center;}
+.lobster-popup.active{display:flex;}
+.lobster-popup img{width:100%;max-width:600px;height:auto;display:block;}
+.lobster-close{position:absolute;top:20px;right:30px;color:#fff;font-size:48px;font-weight:bold;cursor:pointer;line-height:1;}
 
 </style>
 </head>
@@ -495,6 +510,7 @@ display:none;
         <a href="#live-dates">LIVE DATES</a>
         <a href="#gallery">GALLERY</a>
         <a href="/press.html">PRESS</a>
+        <a href="https://thelipsinkers.sumupstore.com/" target="_blank" rel="noopener noreferrer">SHOP</a>
         <a href="/contact.html">CONTACT</a>
       </div>
 
@@ -587,6 +603,13 @@ display:none;
 </div>
 
 
+
+<div class="image-container">
+  <a href="https://thelipsinkers.sumupstore.com/" target="_blank" rel="noopener noreferrer">
+    <img src="images/lipsinkers_t_shirt_ad.jpg" alt="The LipSinkers T-Shirts" />
+  </a>
+</div>
+
 <div id="gallery" class="gallery-section">
 <div class="gallery-grid">
 <img src="images/lipsinkers_gay_shame_26_3.jpg" onclick="openGallery(0)">
@@ -638,9 +661,9 @@ display:none;
 
 <div class="gig-heading">FOR ENQUIRIES &amp; BOOKINGS</div>
 
-<div class="event-card" class="contact-card" style="display:flex;align-items:center;gap:24px;cursor:default;">
+<div class="event-card contact-card" style="display:flex;align-items:center;gap:24px;cursor:default;">
 <div class="contact-photo" style="width:170px;flex-shrink:0;">
-<img src="images/lisa_galore.jpg" alt="Lisa Galore" style="display:block;width:100%;height:auto;">
+<img src="images/lisa_galore.jpg" alt="Lisa Lee" style="display:block;width:100%;height:auto;">
 </div>
 <div class="contact-details" style="flex:1;">
 <div class="event-title" style="margin-bottom:10px;letter-spacing:3px;">LISA LEE</div>
@@ -679,6 +702,35 @@ document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').
 if(e.key==='Escape')closeGallery();
 if(e.key==='ArrowLeft')move(-1);
 if(e.key==='ArrowRight')move(1);});
+</script>
+
+
+<div class="lobster-container">
+  <img id="lobsterGif" src="images/lobster.gif" alt="Accidental lobster">
+</div>
+
+<div id="lobsterPopup" class="lobster-popup">
+  <span class="lobster-close">&times;</span>
+  <img src="images/thom_accident.jpg" alt="Thom accident">
+</div>
+
+<audio id="tromboneSound" preload="auto">
+  <source src="sad_trombone.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const lobster=document.getElementById("lobsterGif");
+const popup=document.getElementById("lobsterPopup");
+const closePopup=document.querySelector(".lobster-close");
+const trombone=document.getElementById("tromboneSound");
+lobster.addEventListener("click",()=>{
+ popup.classList.add("active");
+ trombone.pause();
+ trombone.currentTime=0;
+ trombone.play();
+});
+closePopup.addEventListener("click",()=>popup.classList.remove("active"));
+popup.addEventListener("click",(e)=>{if(e.target===popup) popup.classList.remove("active");});
 </script>
 
 </body>
