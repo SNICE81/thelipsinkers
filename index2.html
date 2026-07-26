@@ -850,6 +850,7 @@ body:`<p>A drag demolition derby the likes of which Adelaide has never seen befo
 <p>Rami Malek might even have to hand over his best actor Oscar after seeing The LipSinkers' recreation of Queen's <em>Bohemian Rhapsody</em> video, using nothing but penlight torches.</p>
 <p>By the end of the show, proceedings have erupted into a side-splitting dance party and the stage looks like Dame Edna Everage held a rummage sale.</p>
 <div class="press-byline">Patrick McDonald, The Adelaide Advertiser, 1 March 2019</div>`
+},
 
 barefoot:{
 title:"THE LIPSINKERS",
@@ -861,6 +862,7 @@ body:`<p>It’s difficult to categorise the LipSinkers. They are drag, they are 
 <p>Despite all the antics and the slapstick humour, there is also a serious message. There isn’t a narrative as such to the selection or sequencing of the play list, but there is cutting social commentary. In one scene two of the troupe wear face masks of Rolf Harris and Cardinal George Pell while they bat away the ping pong balls of society’s disgust and accusations. It almost happens in the blink of an eye and one is left rapidly pondering how the current song choice ‘fits’, then it’s onto the next.</p>
 <p>By the end of the show, the stage is in absolute chaos with costumes and hand properties littering the entire space. One leaves the event shaking their head and asking oneself ‘what the hell was that all about?!’ Whatever the answer, one is glad the tsunami is past, but the smile on one’s face persists for some time.</p>
 <div class="press-byline">Kym Clayton, The Barefoot Review, 2 March 2019</div>`
+},
 
 timeout:{
 title:"The LipSinkers",
@@ -871,18 +873,14 @@ body:`<p>Just what is it that makes the LipSinkers so different, so appealing? I
 };
 function openPressReview(id){
 const r=pressReviews[id];
-if(!r) return;
-document.getElementById('pressTitle').textContent=r.title;
+document.getElementById('pressTitle').innerHTML=r.title;
 document.getElementById('pressStars').textContent=r.stars;
-document.getElementById('pressSubtitle').textContent=r.subtitle;
+document.getElementById('pressSubtitle').innerHTML=r.subtitle;
 document.getElementById('pressBody').innerHTML=r.body;
 document.getElementById('pressPopup').classList.add('active');
 }
 function closePressReview(){document.getElementById('pressPopup').classList.remove('active');}
 document.getElementById('pressPopup').addEventListener('click',function(e){if(e.target===this)closePressReview();});
-document.addEventListener('keydown',function(e){
- if(e.key==='Escape') closePressReview();
-});
 </script>
 
 
