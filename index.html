@@ -13,7 +13,7 @@
     }
 
     html, body {
-      margin: 0;
+      margin:0 0 4px;
       padding: 0;
       font-family: Helvetica, sans-serif;
       background: #ccc url("images/twinklingstars.gif") repeat;
@@ -256,12 +256,12 @@ a:hover {
 
     .review .stars {
       display: block;
-      margin: 0;
+      margin: 0 0 1px 0;
       color: #ffff33;
       font-size: 44px;
       font-weight: bold;
       letter-spacing: 2px;
-    }
+    line-height:0.9;}
 
     .review .attribution {
       display: block;
@@ -659,7 +659,8 @@ display:none;
 <img src="images/lipsinkers_gay_shame_26_3.jpg" onclick="openGallery(2)">
 <img src="images/lipsinkers_gay_shame_26_4.jpg" onclick="openGallery(3)">
 <img src="images/lipsinkers_gay_shame_26_5.jpg" onclick="openGallery(4)">
-<img src="images/lipsinkers_gay_shame_26_6.jpg" onclick="openGallery(5)">
+<img src="images/lipsinkers_gay_shame_26_7.jpg" onclick="openGallery(5)">
+<img src="images/lipsinkers_gay_shame_26_6.jpg" onclick="openGallery(6)">
 <img src="images/lipsinkers_two_brewers_bleach.jpg" onclick="openGallery(6)">
 <img src="images/lipsinkers_ramsgate.jpg" onclick="openGallery(7)">
 <img src="images/lipsinkers_laundry.jpg" onclick="openGallery(8)">
@@ -710,21 +711,21 @@ display:none;
 <div class="event-info">
 <div class="event-title"><span style="color:#33ccff;">JOIN MAILING LIST</span></div>
 </div>
-<div class="event-arrow">→</div>
+<div class="event-arrow"><span style="color:#33ccff;">→</span></div>
 </a>
 
 <a class="event-card" href="https://www.instagram.com/thelipsinkers/" target="_blank" rel="noopener noreferrer">
 <div class="event-info">
 <div class="event-title"><span style="color:#ffff33;">INSTAGRAM</span></div>
 </div>
-<div class="event-arrow">→</div>
+<div class="event-arrow"><span style="color:#ffff33;">→</span></div>
 </a>
 
 <a class="event-card" href="https://www.facebook.com/thelipsinkers" target="_blank" rel="noopener noreferrer">
 <div class="event-info">
-<div class="event-title">FACEBOOK</div>
+<div class="event-title" style="color:#ff3399;">FACEBOOK</div>
 </div>
-<div class="event-arrow">→</div>
+<div class="event-arrow"><span style="color:#ff3399;">→</span></div>
 </a>
 
 <div class="gig-heading">FOR ENQUIRIES &amp; BOOKINGS</div>
@@ -764,7 +765,7 @@ display:none;
 const gallery=[
 'images/lipsinkers_promo_vid_2025.mp4',
 'images/lipsinkers_promo_vid_2019.mp4',
-'images/lipsinkers_gay_shame_26_3.jpg','images/lipsinkers_gay_shame_26_4.jpg','images/lipsinkers_gay_shame_26_5.jpg','images/lipsinkers_gay_shame_26_6.jpg','images/lipsinkers_two_brewers_bleach.jpg','images/lipsinkers_ramsgate.jpg','images/lipsinkers_laundry.jpg','images/lipsinkers_duckie_eagle.jpg','images/lipsinkers_christmas_2019.jpg','images/lipsinkers_colchester_arts_centre_2019.jpg','images/lipsinkers_mary_poppin_2019.jpg','images/lipsinkers_2018.jpg','images/lipsinkers_swirl.jpg','images/lipsinkers_edinburgh_2015.jpg','images/lipsinkers_evolution_poster.jpg','images/lipsinkers_guilty_pleasures_pulp.jpg','images/lipsinkers_guilty_pleasures_lisa_lee.jpg','images/lipsinkers_benefit_1.jpg','images/lipsinkers_benefit_2.jpg','images/lipsinkers_2014.jpg','images/lipsinkers_rvt.jpg','images/lipsinkers_simon_harris.jpg','images/lipsinkers_original.jpg'];
+'images/lipsinkers_gay_shame_26_3.jpg','images/lipsinkers_gay_shame_26_4.jpg','images/lipsinkers_gay_shame_26_5.jpg','images/lipsinkers_gay_shame_26_7.jpg','images/lipsinkers_gay_shame_26_6.jpg','images/lipsinkers_two_brewers_bleach.jpg','images/lipsinkers_ramsgate.jpg','images/lipsinkers_laundry.jpg','images/lipsinkers_duckie_eagle.jpg','images/lipsinkers_christmas_2019.jpg','images/lipsinkers_colchester_arts_centre_2019.jpg','images/lipsinkers_mary_poppin_2019.jpg','images/lipsinkers_2018.jpg','images/lipsinkers_swirl.jpg','images/lipsinkers_edinburgh_2015.jpg','images/lipsinkers_evolution_poster.jpg','images/lipsinkers_guilty_pleasures_pulp.jpg','images/lipsinkers_guilty_pleasures_lisa_lee.jpg','images/lipsinkers_benefit_1.jpg','images/lipsinkers_benefit_2.jpg','images/lipsinkers_2014.jpg','images/lipsinkers_rvt.jpg','images/lipsinkers_simon_harris.jpg','images/lipsinkers_original.jpg'];
 let current=0;
 function show(){const f=gallery[current],img=document.getElementById('galleryImage'),vid=document.getElementById('galleryVideo');if(f.endsWith('.mp4')){img.style.display='none';vid.style.display='block';vid.src=f;}else{vid.pause();vid.style.display='none';img.style.display='block';img.src=f;}}
 function openGallery(i){current=i;show();document.getElementById('lightbox').classList.add('active');}
