@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>The LipSinkers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="LipSinkers,London,drag,lipsync,cabaret,queer,cult,group,duckie,clapham,two,brewers,lisa,lee,steve,nice,thom,shaw,rhys,pieces,claud,palazzo,sean,murray,carl,harrison" />
+  <meta name="description" content="TheLipSinkers" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin:0 0 4px;
+      padding: 0;
+      font-family: Helvetica, sans-serif;
+      background: #ccc url("images/twinklingstars.gif") repeat;
+    }
+
+a, a:visited, a:active {
+  color: #000 !important;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff3399 !important;
+  text-decoration: none !important;
+}
+
+    .header {
+      background-color: black;
+      border:3px solid black;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+        }
+
+   .topnav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      flex-wrap: wrap;
+    }
+    
+    .topnav.responsive #navLinks {
+  border-bottom: 3px solid black;
+}
+
+    .brand {
+      font-size: 42px;
+      font-weight: bold;
+      color: #ff0033;
+      height: 24px;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand img {
+      height: 24px;
+      width: auto;
+    }
+
+    #navLinks {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    #navLinks a {
+      font-size: 20px;
+      font-weight: bold;
+      color: white !important;
+    }
+
+    #navLinks a:hover {
+      color: #ff3399 !important;
+      text-decoration: none !important;
+    }
+
+    .icon {
+      display: none;
+      cursor: pointer;
+    }
+
+    .icon div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+    }
+
+    .main-content {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .image-container {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-content video {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+    
+.section-box {
+  background-color: #ff00ff;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0px 20px 0 20px;
+  margin: 20px 0;
+}
+
+.red {
+  background-color: red;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  
+}
+
+
+    .red .scroll-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .content-wrapper {
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .section-link {
+      display: block;
+      width: 100%;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      margin: 10px 0;
+      text-decoration: none;
+      color: black;
+        }
+
+    .yellow { background-color: #ffcc00; }
+    .pink { background-color: #ff3399 !important; }
+    .blue { background-color: #66ccff; }
+    .green { background-color: #66ff66; }
+    .white { background-color: #ffffff; }
+    
+    .section-box.yellow {
+    font-size: 18px;
+  }
+  
+    .section-box.pink {
+    font-size: 18px;
+  }
+  
+    .section-box.blue {
+    font-size: 18px;
+  }
+  
+  .upcoming-details {
+  font-size: 18px;
+  
+  margin-top: 10px;     /* adds space between UPCOMING and details */
+}
+  
+    .section-box.green {
+    font-size: 18px;
+  }
+
+  
+    .section-box.white {
+  background-color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+    .section-link.yellow {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: left;
+      padding: 15px;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.8;
+    }
+
+    .section-link.yellow .quote {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 18px;
+      display: block;
+      color: #ff3399 !important;
+      text-align: justify;
+      text-align-last: center;
+    }
+
+    .section-link.yellow .attribution {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      display: block;
+      margin: 8px 0 0;
+      text-align: center;
+      color: white;
+    }
+
+    .section-link.yellow .testimonial {
+      margin-bottom: 15px;
+    }
+
+    .review {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .review .stars {
+      display: block;
+      margin: 0 0 1px 0;
+      color: #ffff33;
+      font-size: 44px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    line-height:0.9;}
+
+    .review .attribution {
+      display: block;
+      margin-top: 2px;
+      margin-left: 0;
+      color: white;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .stars {
+      color: #ffcc00;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      display: inline;
+      margin-left: 5px;
+    }
+
+    .section-link.pink {
+      background-color: #ff0000;
+    }
+
+    .section-link.green {
+      background-color: #ff9900;
+    }
+
+    .section-link.blue {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #33ccff;
+    }
+
+    .section-link.blue .upcoming-details {
+      color: white;
+    }
+
+    .section-link.blue .upcoming-details a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .section-link.blue .upcoming-details a:hover {
+      color: #ff3399;
+      text-decoration: none;
+    }
+
+    .section-link.blue .upcoming-details a:hover .event-date,
+    .section-link.blue .upcoming-details a:hover .event-location {
+      color: #ff3399;
+    }
+
+    .section-link.blue .event-date {
+      font-weight: bold;
+      color: #ffff33;
+      display: block;
+      margin-bottom: 2px;
+      line-height: 1.2;
+    }
+
+    .section-link.blue .event-location {
+      font-weight: normal;
+      color: white;
+      display: block;
+      line-height: 1.2;
+    }
+
+    .section-link.mailing {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #ff3399 !important;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px;
+    }
+
+    a.section-link.mailing:hover {
+      color: #ff3399 !important;
+    }
+
+   
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-top: 0;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      border: none;
+      box-sizing: content-box;
+    }
+
+   @media (max-width: 600px) {
+  #navLinks {
+    display: none;
+    flex-direction: column;
+    background-color: black;
+    width: auto;       /* full viewport width */
+    position: fixed;    /* fixed to viewport, not .topnav */
+    top: 48px;          /* adjust this to your header height */
+    left: 0;
+    right: 0;
+    align-items: flex-start;
+    padding: 10px 0;    /* vertical only */
+    margin: 0;
+    border-left: 3px solid black; 
+    border-right: 3px solid black; 
+  }
+
+  #navLinks a {
+    padding: 0px 16px;
+    width: 100%;
+  }
+
+  .topnav.responsive #navLinks {
+    display: flex;
+  }
+
+  .icon {
+    display: block;
+  }
+
+  .column {
+    width: 100%;
+  }
+}
+  
+
+/* ===== GIG POSTERS ===== */
+.gig-section{margin:20px 0;}
+.gig-heading{background:rgba(0,0,0,.5);color:#33ccff;font-size:28px;font-weight:bold;text-align:center;padding:14px;}
+.event-card{display:flex;align-items:center;gap:18px;background:#111;color:#fff !important;margin-top:8px;padding:16px;transition:.2s;}
+.event-card:hover{background:#222;}
+.event-date{width:110px;flex-shrink:0;color:#ffff33;font-weight:bold;font-size:26px;line-height:1;}
+.event-info{flex:1;}
+.event-title{font-size:24px;font-weight:bold;letter-spacing:1px;color:#ff3399;}
+.event-location{margin-top:4px;color:#fff;font-size:16px;}
+.event-arrow{color:#ff3399;font-size:34px;font-weight:bold;}
+@media(max-width:600px){
+.event-card{
+display:block;
+}
+.event-date{
+width:auto;
+display:block;
+font-size:30px;
+line-height:1;
+margin-bottom:12px;
+}
+.event-info{
+display:block;
+}
+.event-title{
+font-size:24px;
+}
+.event-location{
+font-size:16px;
+}
+.event-arrow{
+display:none;
+}
+}
+
+/* Gallery */
+.gallery-section{margin:20px 0;}
+.gallery-title{background:#ff3399;color:#000;font-size:24px;font-weight:bold;text-align:center;padding:10px;}
+
+.video-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;margin:10px 0 5px;}
+.video-thumb{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer;}
+.video-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.video-thumb::after{content:'▶';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:56px;text-shadow:0 0 8px #000;pointer-events:none;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.gallery-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;cursor:pointer;}
+@media(max-width:600px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+.gallery-grid .video-thumb{grid-column:span 1;}
+
+.gallery-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:pointer;display:block;}
+@media(max-width:600px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:5000;align-items:center;justify-content:center;}
+.lightbox.active{display:flex;}
+.lightbox-content{position:relative;width:600px;max-width:calc(100vw - 40px);padding:0;}
+.lightbox img,.lightbox video{display:block;width:100%;max-width:600px;height:auto;margin:0 auto;}
+.close,.prev,.next{position:absolute;color:#fff;font-size:40px;cursor:pointer;user-select:none;}
+.close{top:-10px;right:25px;}
+.prev{left:-5px;top:50%;transform:translateY(-50%);}
+.next{right:-5px;top:50%;transform:translateY(-50%);}
+
+
+
+/* Contact card responsive */
+.contact-details a{
+    white-space:nowrap;
+}
+
+@media (max-width:600px){
+    .contact-card{
+        display:flex !important;
+        flex-direction:column;
+        text-align:center;
+    }
+    .contact-photo{
+        width:240px !important;
+        max-width:80%;
+        margin:0 auto 24px;
+    }
+    .contact-details{
+        text-align:center;
+    }
+    .contact-details .event-title{
+        letter-spacing:2px !important;
+        margin-bottom:20px !important;
+    }
+    .contact-details .event-location{
+        font-size:16px !important;
+        line-height:1.8 !important;
+    }
+}
+
+
+/* ===== Lobster ===== */
+.lobster-container{text-align:center;margin:40px 0;}
+.lobster-container img{
+  display:block;
+  width:85px;
+  height:auto;
+  margin:0 auto;
+  cursor:pointer;
+}
+.lobster-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;justify-content:center;align-items:center;}
+.lobster-popup.active{display:flex;}
+.lobster-popup img{width:100%;max-width:600px;height:auto;display:block;}
+.lobster-close{position:absolute;top:20px;right:30px;color:#fff;font-size:48px;font-weight:bold;cursor:pointer;line-height:1;}
+
+
+
+/* ===== PRESS ===== */
+.press-section{margin:20px 0;}
+.press-heading{background:#ff3399;color:#fff;font-size:28px;font-weight:bold;text-align:center;padding:14px;}
+.press-card{display:flex;justify-content:space-between;align-items:center;background:#fff;color:#000;text-decoration:none !important;padding:16px;margin-top:8px;}
+.press-card.static{cursor:default;}
+.press-main{flex:1;}
+.press-quote{font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;font-size:22px;line-height:1.1;text-transform:uppercase;color:#000;transition:color .15s;}
+.press-card.clickable:hover .press-quote{color:#ff3399;}
+.press-source{margin-top:10px;color:#ff3399;font-weight:bold;font-size:16px;}
+.press-arrow{color:#ff3399;font-size:34px;font-weight:bold;margin-left:18px;}
+@media(max-width:600px){
+.press-quote{font-size:19px;}
+.press-source{font-size:15px;}
+.press-arrow{font-size:28px;}
+}
+
+
+.press-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:6000;align-items:center;justify-content:center;}
+.press-popup.active{display:flex;}
+.press-popup-content{background:#fff;width:600px;max-width:calc(100vw - 40px);padding:30px;position:relative;max-height:90vh;overflow:auto;}
+.press-close{position:absolute;top:10px;right:18px;font-size:42px;color:#ff3399;cursor:pointer;font-weight:bold;}
+.press-popup h2{font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;font-size:30px;line-height:1.05;margin:0 0 18px;text-transform:uppercase;color:#ff3399;}
+.press-stars{font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;font-size:28px;margin:0;}
+.press-paper{color:#ff3399;font-weight:bold;margin:6px 0 12px;}
+.press-body{font:18px/1.6 'Times New Roman',Times,serif;text-align:left;}
+.press-byline{margin-top:24px;font-weight:bold;}
+
+</style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="topnav" id="topnav">
+      <div class="brand"><img src="images/lipsinkers_logo.png" alt="The LipSinkers" /></div>
+
+      <div id="navLinks">
+        <a href="#live-dates">LIVE DATES</a>
+        <a href="#gallery">GALLERY</a>
+        <a href="/press.html">PRESS</a>
+        <a href="https://thelipsinkers.sumupstore.com/" target="_blank" rel="noopener noreferrer">SHOP</a>
+        <a href="/contact.html">CONTACT</a>
+      </div>
+
+      <div class="icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="image-container">
+      <img src="images/lipsinkers_lipstrek.png" alt="The LipSinkers" />
+    </div>
+
+    <div class="content-wrapper">
+      <div class="image-container">
+        <video src="images/lipsinkers_perform.mp4" autoplay muted loop></video>
+      </div>
+      
+      <div class="section-link yellow">
+        <div class="testimonial">
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <div class="attribution">- The Times</div>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <div class="attribution">- Time Out</div>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <div class="attribution">- The Scotsman</div>
+          </div>
+
+          <span class="quote">"In their hands, drag and character and gender and theatre squelch and writhe together, spilling across the room, gesturing towards unknown pleasures and leaving a glorious mess"</span>
+          <span class="attribution">- Ben Walters, Not Television</span>
+        </div>
+      </div>
+
+
+<div class="image-container">
+  <img src="images/lipsinkers_gay_shame_26_1.jpg" alt="The LipSinkers performing" />
+</div>
+
+<div id="live-dates" class="gig-section">
+<div class="gig-heading">UPCOMING LIVE DATES</div>
+
+<a class="event-card" href="https://www.greenman.net/" target="_blank" rel="noopener noreferrer">
+<div class="event-date">FRI 21 AUG</div>
+<div class="event-info">
+<div class="event-title">GREEN MAN FESTIVAL</div>
+<div class="event-location">Bannau Brycheiniog National Park, Wales</div>
+</div>
+<div class="event-arrow">→</div>
+</a>
+
+<a class="event-card" href="https://www.outsavvy.com/event/35762/the-lipsinkers-at-two-brewers" target="_blank" rel="noopener noreferrer">
+<div class="event-date">FRI 25 SEP</div>
+<div class="event-info">
+<div class="event-title">TWO BREWERS</div>
+<div class="event-location">Clapham, London</div>
+</div>
+<div class="event-arrow">→</div>
+</a>
+
+<a class="event-card" href="https://www.outsavvy.com/event/35762/the-lipsinkers-at-two-brewers" target="_blank" rel="noopener noreferrer">
+<div class="event-date">FRI 23 OCT</div>
+<div class="event-info">
+<div class="event-title">TWO BREWERS</div>
+<div class="event-location">Clapham, London</div>
+</div>
+<div class="event-arrow">→</div>
+</a>
+
+<a class="event-card" href="https://www.outsavvy.com/event/35762/the-lipsinkers-at-two-brewers" target="_blank" rel="noopener noreferrer">
+<div class="event-date">FRI 20 NOV</div>
+<div class="event-info">
+<div class="event-title">TWO BREWERS</div>
+<div class="event-location">Clapham, London</div>
+</div>
+<div class="event-arrow">→</div>
+</a>
+
+</div>
+
+
+
+<div class="image-container">
+  <a href="https://thelipsinkers.sumupstore.com/" target="_blank" rel="noopener noreferrer">
+    <img src="images/lipsinkers_t_shirt_ad.jpg" alt="The LipSinkers T-Shirts" />
+  </a>
+</div>
+
+<div id="gallery" class="gallery-section">
+
+<div class="video-gallery">
+<div class="video-thumb" onclick="openGallery(0)"><img src="images/lipsinkers_promo_vid_2025_thumbnail.jpg" alt=""></div>
+<div class="video-thumb" onclick="openGallery(1)"><img src="images/lipsinkers_promo_vid_2019_thumbnail.jpg" alt=""></div>
+</div>
+
+<div class="gallery-grid">
+<img src="images/lipsinkers_gay_shame_26_3.jpg" onclick="openGallery(2)">
+<img src="images/lipsinkers_gay_shame_26_4.jpg" onclick="openGallery(3)">
+<img src="images/lipsinkers_gay_shame_26_5.jpg" onclick="openGallery(4)">
+<img src="images/lipsinkers_gay_shame_26_7.jpg" onclick="openGallery(5)">
+<img src="images/lipsinkers_gay_shame_26_6.jpg" onclick="openGallery(6)">
+<img src="images/lipsinkers_two_brewers_bleach.jpg" onclick="openGallery(6)">
+<img src="images/lipsinkers_ramsgate.jpg" onclick="openGallery(7)">
+<img src="images/lipsinkers_laundry.jpg" onclick="openGallery(8)">
+<img src="images/lipsinkers_duckie_eagle.jpg" onclick="openGallery(9)">
+<img src="images/lipsinkers_christmas_2019.jpg" onclick="openGallery(10)">
+<img src="images/lipsinkers_colchester_arts_centre_2019.jpg" onclick="openGallery(11)">
+<img src="images/lipsinkers_mary_poppin_2019.jpg" onclick="openGallery(12)">
+<img src="images/lipsinkers_2018.jpg" onclick="openGallery(13)">
+<img src="images/lipsinkers_swirl.jpg" onclick="openGallery(14)">
+<img src="images/lipsinkers_edinburgh_2015.jpg" onclick="openGallery(15)">
+<img src="images/lipsinkers_evolution_poster.jpg" onclick="openGallery(16)">
+<img src="images/lipsinkers_guilty_pleasures_pulp.jpg" onclick="openGallery(17)">
+<img src="images/lipsinkers_guilty_pleasures_lisa_lee.jpg" onclick="openGallery(18)">
+<img src="images/lipsinkers_benefit_1.jpg" onclick="openGallery(19)">
+<img src="images/lipsinkers_benefit_2.jpg" onclick="openGallery(20)">
+<img src="images/lipsinkers_2014.jpg" onclick="openGallery(21)">
+<img src="images/lipsinkers_rvt.jpg" onclick="openGallery(22)">
+<img src="images/lipsinkers_simon_harris.jpg" onclick="openGallery(23)">
+<img src="images/lipsinkers_original.jpg" onclick="openGallery(24)">
+</div>
+
+
+<div class="press-section">
+<div class="press-heading">PRESS</div>
+
+<div class="press-card clickable" onclick="openPressReview()"><div class="press-main"><div class="press-quote">Camp, cult and glorious ★★★★★</div><div class="press-source">THE TIMES</div></div><div class="press-arrow">→</div></div>
+
+<div class="press-card clickable"><div class="press-main"><div class="press-quote">A mad, gorgeous, dreamlike cascade of emotions, apparitions and transformations ★★★★★</div><div class="press-source">THE SCOTSMAN</div></div><div class="press-arrow">→</div></div>
+
+<div class="press-card clickable"><div class="press-main"><div class="press-quote">Utterly leftfield, brilliantly bonkers ★★★★★</div><div class="press-source">TIME OUT</div></div><div class="press-arrow">→</div></div>
+
+<div class="press-card static"><div class="press-main"><div class="press-quote">Bloody hell, The LipSinkers are amazing</div><div class="press-source">THE GUARDIAN</div></div></div>
+
+<div class="press-card static"><div class="press-main"><div class="press-quote">Possibly the most ridiculous, fun night out ever</div><div class="press-source">THE TIMES</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">Vagabond drag cabaret</div><div class="press-source">GRACE DENT, THE GUARDIAN</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">One of the Capital's finest cabaret acts!</div><div class="press-source">LONDONTOWN.COM</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">A marimba of joy: professional and hideous, perfectly timed and chaotic... a McFlurry of acidic, artificial wonder</div><div class="press-source">EROTIC REVIEW MAGAZINE</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">This is cabaret for all the family, as long as that family are the Mansons. Go!!</div><div class="press-source">LONDONIST</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">Gloriously bonkers, utterly over-the-top, delightful, bizarre and perfect</div><div class="press-source">VIEWS FROM THE GODS</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">A brilliant night out that will leave you weak and begging for more</div><div class="press-source">BOYZ</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">You can't get more fabulous or alternative than The LipSinkers</div><div class="press-source">QX MAGAZINE</div></div></div>
+
+</div>
+
+<div class="gig-section">
+
+<a class="event-card" href="https://thelipsinkers.us2.list-manage.com/subscribe?u=aadf8a23ab79f616758033a1c&id=9101aa2419" target="_blank" rel="noopener noreferrer">
+<div class="event-info">
+<div class="event-title"><span style="color:#33ccff;">JOIN MAILING LIST</span></div>
+</div>
+<div class="event-arrow"><span style="color:#33ccff;">→</span></div>
+</a>
+
+<a class="event-card" href="https://www.instagram.com/thelipsinkers/" target="_blank" rel="noopener noreferrer">
+<div class="event-info">
+<div class="event-title"><span style="color:#ffff33;">INSTAGRAM</span></div>
+</div>
+<div class="event-arrow"><span style="color:#ffff33;">→</span></div>
+</a>
+
+<a class="event-card" href="https://www.facebook.com/thelipsinkers" target="_blank" rel="noopener noreferrer">
+<div class="event-info">
+<div class="event-title" style="color:#ff3399;">FACEBOOK</div>
+</div>
+<div class="event-arrow"><span style="color:#ff3399;">→</span></div>
+</a>
+
+<div class="gig-heading">FOR ENQUIRIES &amp; BOOKINGS</div>
+
+<div class="event-card contact-card" style="display:flex;align-items:center;gap:24px;cursor:default;">
+<div class="contact-photo" style="width:170px;flex-shrink:0;">
+<img src="images/lisa_galore.jpg" alt="Lisa Lee" style="display:block;width:100%;height:auto;">
+</div>
+<div class="contact-details" style="flex:1;">
+<div class="event-title" style="margin-bottom:10px;letter-spacing:3px;"><span style="color:#ffff33;">LISA LEE</span></div>
+<div class="event-location" style="font-size:18px;line-height:2;">
+<a href="mailto:lisalee@rudegrrl.net" style="color:white !important;font-weight:bold;text-decoration:none;">✉ lisalee@rudegrrl.net</a><br>
+<a href="tel:+447760351957" style="color:white !important;font-weight:bold;text-decoration:none;">☎ +44 (0)7760351957</a>
+</div>
+</div>
+</div>
+
+</div>
+
+    </div>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("topnav").classList.toggle("responsive");
+    }
+  </script>
+
+<div class="lightbox" id="lightbox">
+<div class="lightbox-content">
+<span class="close" onclick="closeGallery()">&times;</span>
+<span class="prev" onclick="move(-1)">&#10094;</span>
+<img id="galleryImage"><video id="galleryVideo" controls style="display:none;width:100%;height:auto;"></video>
+<span class="next" onclick="move(1)">&#10095;</span>
+</div></div>
+<script>
+const gallery=[
+'images/lipsinkers_promo_vid_2025.mp4',
+'images/lipsinkers_promo_vid_2019.mp4',
+'images/lipsinkers_gay_shame_26_3.jpg','images/lipsinkers_gay_shame_26_4.jpg','images/lipsinkers_gay_shame_26_5.jpg','images/lipsinkers_gay_shame_26_7.jpg','images/lipsinkers_gay_shame_26_6.jpg','images/lipsinkers_two_brewers_bleach.jpg','images/lipsinkers_ramsgate.jpg','images/lipsinkers_laundry.jpg','images/lipsinkers_duckie_eagle.jpg','images/lipsinkers_christmas_2019.jpg','images/lipsinkers_colchester_arts_centre_2019.jpg','images/lipsinkers_mary_poppin_2019.jpg','images/lipsinkers_2018.jpg','images/lipsinkers_swirl.jpg','images/lipsinkers_edinburgh_2015.jpg','images/lipsinkers_evolution_poster.jpg','images/lipsinkers_guilty_pleasures_pulp.jpg','images/lipsinkers_guilty_pleasures_lisa_lee.jpg','images/lipsinkers_benefit_1.jpg','images/lipsinkers_benefit_2.jpg','images/lipsinkers_2014.jpg','images/lipsinkers_rvt.jpg','images/lipsinkers_simon_harris.jpg','images/lipsinkers_original.jpg'];
+let current=0;
+function show(){const f=gallery[current],img=document.getElementById('galleryImage'),vid=document.getElementById('galleryVideo');if(f.endsWith('.mp4')){img.style.display='none';vid.style.display='block';vid.src=f;}else{vid.pause();vid.style.display='none';img.style.display='block';img.src=f;}}
+function openGallery(i){current=i;show();document.getElementById('lightbox').classList.add('active');}
+function closeGallery(){document.getElementById('lightbox').classList.remove('active');document.getElementById('galleryVideo').pause();}
+function move(d){current=(current+d+gallery.length)%gallery.length;show();}
+document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').classList.contains('active'))return;
+if(e.key==='Escape')closeGallery();
+if(e.key==='ArrowLeft')move(-1);
+if(e.key==='ArrowRight')move(1);});
+</script>
+
+
+<div class="lobster-container">
+  <img id="lobsterGif" src="images/lobster.gif" alt="Accidental lobster">
+</div>
+
+<div id="lobsterPopup" class="lobster-popup">
+  <span class="lobster-close">&times;</span>
+  <img src="images/thom_accident.jpg" alt="Thom accident">
+</div>
+
+<audio id="tromboneSound" preload="auto">
+  <source src="sad_trombone.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const lobster=document.getElementById("lobsterGif");
+const popup=document.getElementById("lobsterPopup");
+const closePopup=document.querySelector(".lobster-close");
+const trombone=document.getElementById("tromboneSound");
+lobster.addEventListener("click",()=>{
+ popup.classList.add("active");
+ trombone.pause();
+ trombone.currentTime=0;
+ trombone.play();
+});
+closePopup.addEventListener("click",()=>popup.classList.remove("active"));
+popup.addEventListener("click",(e)=>{if(e.target===popup) popup.classList.remove("active");});
+</script>
+
+
+<div class="press-popup" id="pressPopup">
+<div class="press-popup-content">
+<span class="press-close" onclick="closePressReview()">&times;</span>
+<h2>A Celebration of the Camp and the Crazy</h2>
+<div class="press-stars">★★★★★</div>
+<div class="press-paper" style="color:#000;">Donald Hutera says LipSinkers do not just pay lip service to drag, they take it to a new level</div>
+<div class="press-body"><p><strong>Evolution of the Fags, Liquid Room Annexe Double, Edinburgh Festival</strong></p></div>
+<div class="press-body">
+<p>The official word is that there are 3,314 registered shows at the Fringe this year, of which 24 per cent are free (whether ticketed or non-ticketed). Although donations are welcome, you could swim for days in this sea of talent at little or no cost. Thus far I’ve hardly seen any of it. There is, however, one free performance that absolutely floats my boat.</p>
+<p>The LipSinkers are a London-based drag quintet comprised of four blokes and a woman who behaves just like her male counterparts. As incredibly manic and skilful practitioners of the art of lip-synching, their musical choices range from obscure and/or vintage Broadway show tunes to pop songs. They’re camp, cult and glorious mainly because they go for broke serving up what amounts to a generous string of full-blown mini-production numbers.</p>
+<p>The pace of their show, <em>Evolution of the Fags</em>, is breakneck and the volume loud, with bad wigs galore and discarded costumes (hugely and inventively tacky) and props littering the stage. The LipSinkers offer an outrageously good time via renditions of, say, Ethel Merman’s infamous disco version of <em>There’s No Business Like Show Business</em>; Queen’s <em>Bohemian Rhapsody</em>, complete with pocket-torch facial lighting; or a duet between the late Keith Harris and Orville the Duck reconfigured as a pricelessly twee love song that climaxes with a long snog.</p>
+<p>Without wanting to spray these nutty, gifted entertainers with the perfume of pretentiousness, their act also contains its fair share of indirect socio-cultural commentary. The political subtext is most explicit in their take on Jeffrey Lewis &amp; The Rain’s <em>WWPRD</em>, a paean to the Russian feminist anarchists Pussy Riot. They also lend Tinie Tempah’s <em>Pass Out</em> new meaning thanks to a lead vocal delivered by a coked-up woman in a kaftan who’s surrounded by a handful of similarly determined party animals. As a celebration of excessive self-indulgence it can’t be topped. But the entire hour spent with these shamelessly mad, tireless and gender-bending drag clowns builds up a liberating and euphoric energy. Go.</p>
+<div class="press-byline">Donald Hutera, The Times, 21 August 2015</div>
+</div>
+</div>
+</div>
+<script>
+function openPressReview(){document.getElementById('pressPopup').classList.add('active');}
+function closePressReview(){document.getElementById('pressPopup').classList.remove('active');}
+document.getElementById('pressPopup').addEventListener('click',e=>{if(e.target.id==='pressPopup')closePressReview();});
+</script>
+
+</body>
+</html>
