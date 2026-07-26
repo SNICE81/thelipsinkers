@@ -686,11 +686,11 @@ display:none;
 <div class="press-section">
 <div class="press-heading">PRESS</div>
 
-<div class="press-card clickable" onclick="openPressReview()"><div class="press-main"><div class="press-quote">Camp, cult and glorious ★★★★★</div><div class="press-source">THE TIMES</div></div><div class="press-arrow">→</div></div>
+<div class="press-card clickable" onclick="openPressReview('times')"><div class="press-main"><div class="press-quote">Camp, cult and glorious ★★★★★</div><div class="press-source">THE TIMES</div></div><div class="press-arrow">→</div></div>
 
-<div class="press-card clickable"><div class="press-main"><div class="press-quote">A mad, gorgeous, dreamlike cascade of emotions, apparitions and transformations ★★★★★</div><div class="press-source">THE SCOTSMAN</div></div><div class="press-arrow">→</div></div>
+<div class="press-card clickable" onclick="openPressReview('scotsman')"><div class="press-main"><div class="press-quote">A mad, gorgeous, dreamlike cascade of emotions, apparitions and transformations ★★★★★</div><div class="press-source">THE SCOTSMAN</div></div><div class="press-arrow">→</div></div>
 
-<div class="press-card clickable"><div class="press-main"><div class="press-quote">Utterly leftfield, brilliantly bonkers ★★★★★</div><div class="press-source">TIME OUT</div></div><div class="press-arrow">→</div></div>
+<div class="press-card clickable" onclick="openPressReview('timeout')"><div class="press-main"><div class="press-quote">UTTERLY LEFTFIELD... BRILLIANTLY BONKERS ★★★★★</div><div class="press-source">TIME OUT</div></div><div class="press-arrow">→</div></div>
 
 <div class="press-card clickable"><div class="press-main"><div class="press-quote">Bloody hell, The LipSinkers are amazing</div><div class="press-source">THE GUARDIAN</div></div><div class="press-arrow">→</div></div>
 
@@ -807,27 +807,54 @@ popup.addEventListener("click",(e)=>{if(e.target===popup) popup.classList.remove
 </script>
 
 
+
 <div class="press-popup" id="pressPopup">
 <div class="press-popup-content">
 <span class="press-close" onclick="closePressReview()">&times;</span>
-<h2>A Celebration of the Camp and the Crazy</h2>
-<div class="press-stars">★★★★★</div>
-<div class="press-paper" style="color:#000;">Donald Hutera says LipSinkers do not just pay lip service to drag, they take it to a new level</div>
-<div class="press-body"><p><strong>Evolution of the Fags, Liquid Room Annexe Double, Edinburgh Festival</strong></p></div>
+<h2 id="pressTitle"></h2>
+<div class="press-stars" id="pressStars"></div>
+<div class="press-paper" id="pressSubtitle" style="color:#000;"></div>
+<div class="press-body" id="pressBody"></div>
+</div></div>
+<script>
+const pressReviews={
+times:{
+title:"A Celebration of the Camp and the Crazy",
+stars:"★★★★★",
+subtitle:"Donald Hutera says LipSinkers do not just pay lip service to drag, they take it to a new level",
+body:`<p><strong>Evolution of the Fags, Liquid Room Annexe Double, Edinburgh Festival</strong></p></div>
 <div class="press-body">
 <p>The official word is that there are 3,314 registered shows at the Fringe this year, of which 24 per cent are free (whether ticketed or non-ticketed). Although donations are welcome, you could swim for days in this sea of talent at little or no cost. Thus far I’ve hardly seen any of it. There is, however, one free performance that absolutely floats my boat.</p>
 <p>The LipSinkers are a London-based drag quintet comprised of four blokes and a woman who behaves just like her male counterparts. As incredibly manic and skilful practitioners of the art of lip-synching, their musical choices range from obscure and/or vintage Broadway show tunes to pop songs. They’re camp, cult and glorious mainly because they go for broke serving up what amounts to a generous string of full-blown mini-production numbers.</p>
 <p>The pace of their show, <em>Evolution of the Fags</em>, is breakneck and the volume loud, with bad wigs galore and discarded costumes (hugely and inventively tacky) and props littering the stage. The LipSinkers offer an outrageously good time via renditions of, say, Ethel Merman’s infamous disco version of <em>There’s No Business Like Show Business</em>; Queen’s <em>Bohemian Rhapsody</em>, complete with pocket-torch facial lighting; or a duet between the late Keith Harris and Orville the Duck reconfigured as a pricelessly twee love song that climaxes with a long snog.</p>
 <p>Without wanting to spray these nutty, gifted entertainers with the perfume of pretentiousness, their act also contains its fair share of indirect socio-cultural commentary. The political subtext is most explicit in their take on Jeffrey Lewis &amp; The Rain’s <em>WWPRD</em>, a paean to the Russian feminist anarchists Pussy Riot. They also lend Tinie Tempah’s <em>Pass Out</em> new meaning thanks to a lead vocal delivered by a coked-up woman in a kaftan who’s surrounded by a handful of similarly determined party animals. As a celebration of excessive self-indulgence it can’t be topped. But the entire hour spent with these shamelessly mad, tireless and gender-bending drag clowns builds up a liberating and euphoric energy. Go.</p>
-<div class="press-byline">Donald Hutera, The Times, 21 August 2015</div>
-</div>
-</div>
-</div>
-<script>
-function openPressReview(){document.getElementById('pressPopup').classList.add('active');}
+<div class="press-byline">Donald Hutera, The Times, 21 August 2015`
+},
+scotsman:{
+title:"Miming a Rich Seam of High Camp",
+stars:"★★★★★",
+subtitle:"The LipSinkers: Evolution of the Fags, Liquid Room Annexe",
+body:`<p>The LipSinkers are a drag troupe who mime to pop songs. But their show isn't <em>A Night Out with Danny La Rue</em>. It's not <em>RuPaul's Drag Race</em>. And it's not for the mild at heart or the mess-averse. It's weird, wild, funny and fresh. It's a perpetual-motion machine of radical queer fun. It's low-budget, high-impact.</p><p>This five-strong troupe comes out of east London's alternative drag scene and the diversity of their influences shows in the different energy each performer brings to the stage, as well as their inventively outrageous outfits and unconventional song choices.</p><p>The show is studded with spectacular set-pieces... The troupe can also deliver regimented hoofing and high-octane burlesque—and they use stillness to powerful effect too.</p><p>An inflatable shark features prominently and, like a shark, the LipSinkers keep moving forward.</p><p>This passion for the possibilities of performance clearly fuels the machine, and it's the alchemy that transforms cheap clothes and pound-shop props into the stuff of fantasy.</p><div class="press-byline">Ben Walters, The Scotsman, 27 August 2015</div>`
+},
+timeout:{
+title:"The LipSinkers",
+stars:"★★★★★",
+subtitle:"Time Out",
+body:`<p>Just what is it that makes the LipSinkers so different, so appealing? It's a hard thing to pin down but it basically comes down to high-octane queer exuberance of the first order.</p><p>Making their Fringe debut, this hilariously entertaining four-strong alternative drag troupe developed out of lip-syncing contests held a decade ago at Bistrotheque's experimental cabaret room.</p><p>The sensibility is utterly leftfield: the looks are brilliantly bonkers; the routines are tightly choreographed; the lip-synching is spot on; and the chemistry between Lisa Lee, Richardette, Rhyannon Styles and Blanche Dubois is affectionate and assured.</p><p>The extra special ingredients are the implicit politics and the sheer enjoyment at work. The LipSinkers are queer and loving it and my face aches from grinning when I watch them.</p><div class="press-byline">Ben Walters, Time Out, 20 August 2013</div>`
+}
+};
+function openPressReview(id){
+const r=pressReviews[id];
+document.getElementById('pressTitle').innerHTML=r.title;
+document.getElementById('pressStars').textContent=r.stars;
+document.getElementById('pressSubtitle').textContent=r.subtitle;
+document.getElementById('pressBody').innerHTML=r.body;
+document.getElementById('pressPopup').classList.add('active');
+}
 function closePressReview(){document.getElementById('pressPopup').classList.remove('active');}
-document.getElementById('pressPopup').addEventListener('click',e=>{if(e.target.id==='pressPopup')closePressReview();});
+document.getElementById('pressPopup').addEventListener('click',function(e){if(e.target===this)closePressReview();});
 </script>
+
 
 </body>
 </html>
