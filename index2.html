@@ -13,7 +13,7 @@
     }
 
     html, body {
-      margin: 0;
+      margin:0 0 4px;
       padding: 0;
       font-family: Helvetica, sans-serif;
       background: #ccc url("images/twinklingstars.gif") repeat;
@@ -52,7 +52,7 @@ a:hover {
 }
 
     .brand {
-      font-size: 24px;
+      font-size: 42px;
       font-weight: bold;
       color: #ff0033;
       height: 24px;
@@ -256,12 +256,12 @@ a:hover {
 
     .review .stars {
       display: block;
-      margin: 0;
+      margin: 0 0 1px 0;
       color: #ffff33;
-      font-size: 24px;
+      font-size: 44px;
       font-weight: bold;
       letter-spacing: 2px;
-    }
+    line-height:0.9;}
 
     .review .attribution {
       display: block;
@@ -453,7 +453,7 @@ display:none;
 .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:5000;align-items:center;justify-content:center;}
 .lightbox.active{display:flex;}
 .lightbox-content{position:relative;width:600px;max-width:calc(100vw - 40px);padding:0;}
-.lightbox img,.lightbox video{display:block;width:600px;max-width:100%;height:auto;margin:0;}
+.lightbox img,.lightbox video{display:block;width:100%;max-width:600px;height:auto;margin:0 auto;}
 .close,.prev,.next{position:absolute;color:#fff;font-size:40px;cursor:pointer;user-select:none;}
 .close{top:-10px;right:25px;}
 .prev{left:-5px;top:50%;transform:translateY(-50%);}
@@ -504,6 +504,35 @@ display:none;
 .lobster-popup.active{display:flex;}
 .lobster-popup img{width:100%;max-width:600px;height:auto;display:block;}
 .lobster-close{position:absolute;top:20px;right:30px;color:#fff;font-size:48px;font-weight:bold;cursor:pointer;line-height:1;}
+
+
+
+/* ===== PRESS ===== */
+.press-section{margin:20px 0;}
+.press-heading{background:#ff3399;color:#fff;font-size:28px;font-weight:bold;text-align:center;padding:14px;}
+.press-card{display:flex;justify-content:space-between;align-items:center;background:#fff;color:#000;text-decoration:none !important;padding:16px;margin-top:8px;}
+.press-card.static{cursor:default;}
+.press-main{flex:1;}
+.press-quote{font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;font-size:22px;line-height:1.1;text-transform:uppercase;color:#000;transition:color .15s;}
+.press-card.clickable:hover .press-quote{color:#ff3399;}
+.press-source{margin-top:10px;color:#ff3399;font-weight:bold;font-size:16px;}
+.press-arrow{color:#ff3399;font-size:34px;font-weight:bold;margin-left:18px;}
+@media(max-width:600px){
+.press-quote{font-size:19px;}
+.press-source{font-size:15px;}
+.press-arrow{font-size:28px;}
+}
+
+
+.press-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:6000;align-items:center;justify-content:center;}
+.press-popup.active{display:flex;}
+.press-popup-content{background:#fff;width:600px;max-width:calc(100vw - 40px);padding:30px;position:relative;max-height:90vh;overflow:auto;}
+.press-close{position:absolute;top:10px;right:18px;font-size:42px;color:#ff3399;cursor:pointer;font-weight:bold;}
+.press-popup h2{font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;font-size:30px;line-height:1.05;margin:0 0 18px;text-transform:uppercase;color:#ff3399;}
+.press-stars{font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;font-size:28px;margin:0;}
+.press-paper{color:#ff3399;font-weight:bold;margin:6px 0 12px;}
+.press-body{font:18px/1.6 'Times New Roman',Times,serif;text-align:left;}
+.press-byline{margin-top:24px;font-weight:bold;}
 
 </style>
 </head>
@@ -630,7 +659,8 @@ display:none;
 <img src="images/lipsinkers_gay_shame_26_3.jpg" onclick="openGallery(2)">
 <img src="images/lipsinkers_gay_shame_26_4.jpg" onclick="openGallery(3)">
 <img src="images/lipsinkers_gay_shame_26_5.jpg" onclick="openGallery(4)">
-<img src="images/lipsinkers_gay_shame_26_6.jpg" onclick="openGallery(5)">
+<img src="images/lipsinkers_gay_shame_26_7.jpg" onclick="openGallery(5)">
+<img src="images/lipsinkers_gay_shame_26_6.jpg" onclick="openGallery(6)">
 <img src="images/lipsinkers_two_brewers_bleach.jpg" onclick="openGallery(6)">
 <img src="images/lipsinkers_ramsgate.jpg" onclick="openGallery(7)">
 <img src="images/lipsinkers_laundry.jpg" onclick="openGallery(8)">
@@ -652,27 +682,50 @@ display:none;
 <img src="images/lipsinkers_original.jpg" onclick="openGallery(24)">
 </div>
 
+
+<div class="press-section">
+<div class="press-heading">PRESS</div>
+
+<div class="press-card clickable" onclick="openPressReview('times')"><div class="press-main"><div class="press-quote">Camp, cult and glorious ★★★★★</div><div class="press-source">THE TIMES</div></div><div class="press-arrow">→</div></div>
+
+<div class="press-card clickable" onclick="openPressReview('scotsman')"><div class="press-main"><div class="press-quote">A mad, gorgeous, dreamlike cascade of emotions, apparitions and transformations ★★★★★</div><div class="press-source">THE SCOTSMAN</div></div><div class="press-arrow">→</div></div>
+
+<div class="press-card clickable" onclick="openPressReview('timeout')"><div class="press-main"><div class="press-quote">UTTERLY LEFTFIELD... BRILLIANTLY BONKERS ★★★★★</div><div class="press-source">TIME OUT</div></div><div class="press-arrow">→</div></div>
+
+<div class="press-card clickable"><div class="press-main"><div class="press-quote">Bloody hell, The LipSinkers are amazing</div><div class="press-source">THE GUARDIAN</div></div><div class="press-arrow">→</div></div>
+
+<div class="press-card static"><div class="press-main"><div class="press-quote">Possibly the most ridiculous, fun night out ever</div><div class="press-source">THE TIMES</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">Vagabond drag cabaret</div><div class="press-source">GRACE DENT, THE GUARDIAN</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">One of the Capital's finest cabaret acts!</div><div class="press-source">LONDONTOWN.COM</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">A marimba of joy: professional and hideous, perfectly timed and chaotic... a McFlurry of acidic, artificial wonder</div><div class="press-source">EROTIC REVIEW MAGAZINE</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">This is cabaret for all the family, as long as that family are the Mansons. Go!!</div><div class="press-source">LONDONIST</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">Gloriously bonkers, utterly over-the-top, delightful, bizarre and perfect</div><div class="press-source">VIEWS FROM THE GODS</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">A brilliant night out that will leave you weak and begging for more</div><div class="press-source">BOYZ</div></div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">You can't get more fabulous or alternative than The LipSinkers</div><div class="press-source">QX MAGAZINE</div></div></div>
+
+</div>
+
 <div class="gig-section">
 
 <a class="event-card" href="https://thelipsinkers.us2.list-manage.com/subscribe?u=aadf8a23ab79f616758033a1c&id=9101aa2419" target="_blank" rel="noopener noreferrer">
 <div class="event-info">
-<div class="event-title">JOIN OUR MAILING LIST</div>
+<div class="event-title"><span style="color:#33ccff;">JOIN MAILING LIST</span></div>
 </div>
-<div class="event-arrow">→</div>
+<div class="event-arrow"><span style="color:#33ccff;">→</span></div>
 </a>
 
 <a class="event-card" href="https://www.instagram.com/thelipsinkers/" target="_blank" rel="noopener noreferrer">
 <div class="event-info">
-<div class="event-title">INSTAGRAM</div>
+<div class="event-title"><span style="color:#ffff33;">INSTAGRAM</span></div>
 </div>
-<div class="event-arrow">→</div>
+<div class="event-arrow"><span style="color:#ffff33;">→</span></div>
 </a>
 
 <a class="event-card" href="https://www.facebook.com/thelipsinkers" target="_blank" rel="noopener noreferrer">
 <div class="event-info">
-<div class="event-title">FACEBOOK</div>
+<div class="event-title" style="color:#ff3399;">FACEBOOK</div>
 </div>
-<div class="event-arrow">→</div>
+<div class="event-arrow"><span style="color:#ff3399;">→</span></div>
 </a>
 
 <div class="gig-heading">FOR ENQUIRIES &amp; BOOKINGS</div>
@@ -682,7 +735,7 @@ display:none;
 <img src="images/lisa_galore.jpg" alt="Lisa Lee" style="display:block;width:100%;height:auto;">
 </div>
 <div class="contact-details" style="flex:1;">
-<div class="event-title" style="margin-bottom:10px;letter-spacing:3px;">LISA LEE</div>
+<div class="event-title" style="margin-bottom:10px;letter-spacing:3px;"><span style="color:#ffff33;">LISA LEE</span></div>
 <div class="event-location" style="font-size:18px;line-height:2;">
 <a href="mailto:lisalee@rudegrrl.net" style="color:white !important;font-weight:bold;text-decoration:none;">✉ lisalee@rudegrrl.net</a><br>
 <a href="tel:+447760351957" style="color:white !important;font-weight:bold;text-decoration:none;">☎ +44 (0)7760351957</a>
@@ -712,7 +765,7 @@ display:none;
 const gallery=[
 'images/lipsinkers_promo_vid_2025.mp4',
 'images/lipsinkers_promo_vid_2019.mp4',
-'images/lipsinkers_gay_shame_26_3.jpg','images/lipsinkers_gay_shame_26_4.jpg','images/lipsinkers_gay_shame_26_5.jpg','images/lipsinkers_gay_shame_26_6.jpg','images/lipsinkers_two_brewers_bleach.jpg','images/lipsinkers_ramsgate.jpg','images/lipsinkers_laundry.jpg','images/lipsinkers_duckie_eagle.jpg','images/lipsinkers_christmas_2019.jpg','images/lipsinkers_colchester_arts_centre_2019.jpg','images/lipsinkers_mary_poppin_2019.jpg','images/lipsinkers_2018.jpg','images/lipsinkers_swirl.jpg','images/lipsinkers_edinburgh_2015.jpg','images/lipsinkers_evolution_poster.jpg','images/lipsinkers_guilty_pleasures_pulp.jpg','images/lipsinkers_guilty_pleasures_lisa_lee.jpg','images/lipsinkers_benefit_1.jpg','images/lipsinkers_benefit_2.jpg','images/lipsinkers_2014.jpg','images/lipsinkers_rvt.jpg','images/lipsinkers_simon_harris.jpg','images/lipsinkers_original.jpg'];
+'images/lipsinkers_gay_shame_26_3.jpg','images/lipsinkers_gay_shame_26_4.jpg','images/lipsinkers_gay_shame_26_5.jpg','images/lipsinkers_gay_shame_26_7.jpg','images/lipsinkers_gay_shame_26_6.jpg','images/lipsinkers_two_brewers_bleach.jpg','images/lipsinkers_ramsgate.jpg','images/lipsinkers_laundry.jpg','images/lipsinkers_duckie_eagle.jpg','images/lipsinkers_christmas_2019.jpg','images/lipsinkers_colchester_arts_centre_2019.jpg','images/lipsinkers_mary_poppin_2019.jpg','images/lipsinkers_2018.jpg','images/lipsinkers_swirl.jpg','images/lipsinkers_edinburgh_2015.jpg','images/lipsinkers_evolution_poster.jpg','images/lipsinkers_guilty_pleasures_pulp.jpg','images/lipsinkers_guilty_pleasures_lisa_lee.jpg','images/lipsinkers_benefit_1.jpg','images/lipsinkers_benefit_2.jpg','images/lipsinkers_2014.jpg','images/lipsinkers_rvt.jpg','images/lipsinkers_simon_harris.jpg','images/lipsinkers_original.jpg'];
 let current=0;
 function show(){const f=gallery[current],img=document.getElementById('galleryImage'),vid=document.getElementById('galleryVideo');if(f.endsWith('.mp4')){img.style.display='none';vid.style.display='block';vid.src=f;}else{vid.pause();vid.style.display='none';img.style.display='block';img.src=f;}}
 function openGallery(i){current=i;show();document.getElementById('lightbox').classList.add('active');}
@@ -751,6 +804,62 @@ lobster.addEventListener("click",()=>{
 });
 closePopup.addEventListener("click",()=>popup.classList.remove("active"));
 popup.addEventListener("click",(e)=>{if(e.target===popup) popup.classList.remove("active");});
+</script>
+
+
+<div class="press-popup" id="pressPopup">
+<div class="press-popup-content">
+<span class="press-close" onclick="closePressReview()">&times;</span>
+<h2 id="pressTitle"></h2>
+<div class="press-stars" id="pressStars"></div>
+<div class="press-paper" id="pressSubtitle" style="color:#000;"></div>
+<div class="press-body" id="pressBody"></div>
+</div>
+</div>
+<script>
+const pressReviews={
+times:{
+title:"A Celebration of the Camp and the Crazy",
+stars:"★★★★★",
+subtitle:"Donald Hutera says LipSinkers do not just pay lip service to drag, they take it to a new level",
+body:`<p><strong>Evolution of the Fags, Liquid Room Annexe Double, Edinburgh Festival</strong></p>
+<p>The official word is that there are 3,314 registered shows at the Fringe this year, of which 24 per cent are free (whether ticketed or non-ticketed). Although donations are welcome, you could swim for days in this sea of talent at little or no cost. Thus far I've hardly seen any of it. There is, however, one free performance that absolutely floats my boat.</p>
+<p>The LipSinkers are a London-based drag quintet comprised of four blokes and a woman who behaves just like her male counterparts. As incredibly manic and skilful practitioners of the art of lip-synching, their musical choices range from obscure and/or vintage Broadway show tunes to pop songs. They're camp, cult and glorious mainly because they go for broke serving up what amounts to a generous string of full-blown mini-production numbers.</p>
+<p>The pace of their show, <em>Evolution of the Fags</em>, is breakneck and the volume loud, with bad wigs galore and discarded costumes and props littering the stage.</p>
+<div class="press-byline">Donald Hutera, The Times, 21 August 2015</div>`
+},
+scotsman:{
+title:"Miming a Rich Seam of High Camp",
+stars:"★★★★★",
+subtitle:"The LipSinkers: Evolution of the Fags, Liquid Room Annexe",
+body:`<p>The LipSinkers are a drag troupe who mime to pop songs. But their show isn't <em>A Night Out with Danny La Rue</em>. It's not <em>RuPaul's Drag Race</em>. And it's not for the mild at heart or the mess-averse. It's weird, wild, funny and fresh. It's a perpetual-motion machine of radical queer fun. It's low-budget, high-impact. It's a mad, gorgeous, dreamlike cascade of emotions, apparitions and transformations that leaves you asking questions like: "Where did that tartan umbrella come from?" "Why was Orville the Duck so very sad?" and "Wait, was that a pair of giant jellyfish?"</p>
+<p>This five-strong troupe comes out of east London's alternative drag scene and the diversity of their influences shows in the different energy each performer brings to the stage, as well as their inventively outrageous outfits and unconventional song choices. Showtunes and pop hits mingle with Plastic Bertrand, Bill Wyman, The Gossip and The Pogues.</p>
+<p>The show is studded with spectacular set-pieces: Tinie Tempah's <em>Pass Out</em> becomes an orchestrated car-crash of escalating debauchery, a disco version of <em>There's No Business Like Show Business</em> yields a delirious swirl of togas, cavewomen, gorillas and palm trees, and a high-concept take on <em>Bohemian Rhapsody</em> is simple yet sublime. The frenetic hullabaloo of these numbers belies their accomplished choreography, which often incorporates multiple costume changes within a single routine.</p>
+<p>An inflatable shark features prominently and, like a shark, the LipSinkers keep moving forward. One number flows into the next, and the show evolves as they play with the set list and explore the venue's potential.</p>
+<p>This passion for the possibilities of performance clearly fuels the machine, and it's the alchemy that transforms cheap clothes and pound-shop props into the stuff of fantasy. At one point, a bearded queen, flowers in her blue wig, channels Dylan Thomas, mouthing the words "out of the chaos would come bliss". And in this utterly absurd, utterly queer, utterly joyous show, it does.</p>
+<div class="press-byline">Ben Walters, The Scotsman, 27 August 2015</div>`,
+timeout:{
+title:"The LipSinkers",
+stars:"★★★★★",
+subtitle":"Time Out",
+body:`<p>Just what is it that makes the LipSinkers so different, so appealing? It’s a hard thing to pin down but it basically comes down to high-octane queer exuberance of the first order.</p>
+<p>Making their Fringe debut, this hilariously entertaining four-strong alternative drag troupe – who lip-synch to imaginatively selected songs by acts ranging from Jessie J and Will.I.Am to Pulp and the Lovely Eggs – developed out of lip-syncing contests held a decade ago at Bistrotheque’s seminal east London experimental cabaret room (also a key locale for Jonny Woo and Bourgeois & Maurice).</p>
+<p>The sensibility is utterly leftfield: the looks are brilliantly bonkers, a kind of Primark club-kid couture encompassing plastic Macs, lacy bodies, vintage mumus and outfits made of rubber gloves; the routines are tightly choreographed, despite often giving the impression of on-the-hoof vamping; the lip-synching itself is technically spot on; the acts are sexy without really being erotic; and the chemistry between the charismatic performers – Lisa Lee, Richardette, Rhyannon Styles and Blanche Dubois – is affectionate and assured.</p>
+<p>The extra special ingredients are the implicit politics and the sheer enjoyment at work, which actually add up to the same thing. The LipSinkers are queer and loving it and my face aches from grinning when I watch them.</p>
+<div class="press-byline">Ben Walters, Time Out, 20 August 2013</div>`
+}
+}
+};
+function openPressReview(id){
+const r=pressReviews[id];
+document.getElementById('pressTitle').innerHTML=r.title;
+document.getElementById('pressStars').innerHTML=r.stars;
+document.getElementById('pressSubtitle').innerHTML=r.subtitle;
+document.getElementById('pressBody').innerHTML=r.body;
+document.getElementById('pressPopup').classList.add('active');
+}
+function closePressReview(){document.getElementById('pressPopup').classList.remove('active');}
+document.getElementById('pressPopup').addEventListener('click',e=>{if(e.target.id==='pressPopup')closePressReview();});
 </script>
 
 </body>
