@@ -452,7 +452,7 @@ display:none;
 @media(max-width:600px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
 .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:5000;align-items:center;justify-content:center;}
 .lightbox.active{display:flex;}
-.lightbox-content{position:relative;width:min(600px,100%);padding:0 20px;}
+.lightbox-content{position:relative;width:600px;max-width:100%;padding:0 20px;}
 .lightbox img{width:100%;height:137px;
   object-fit:contain;display:block;}
 .close,.prev,.next{position:absolute;color:#fff;font-size:40px;cursor:pointer;user-select:none;}
@@ -635,8 +635,8 @@ display:none;
 <img src="images/lipsinkers_two_brewers_bleach.jpg" onclick="openGallery(6)">
 <img src="images/lipsinkers_ramsgate.jpg" onclick="openGallery(7)">
 <img src="images/lipsinkers_laundry.jpg" onclick="openGallery(8)">
-<img src="images/lipsinkers_christmas_2019.jpg" onclick="openGallery(9)">
-<img src="images/lipsinkers_duckie_eagle.jpg" onclick="openGallery(10)">
+<img src="images/lipsinkers_duckie_eagle.jpg" onclick="openGallery(9)">
+<img src="images/lipsinkers_christmas_2019.jpg" onclick="openGallery(10)">
 <img src="images/lipsinkers_colchester_arts_centre_2019.jpg" onclick="openGallery(11)">
 <img src="images/lipsinkers_mary_poppin_2019.jpg" onclick="openGallery(12)">
 <img src="images/lipsinkers_2018.jpg" onclick="openGallery(13)">
@@ -713,7 +713,7 @@ display:none;
 const gallery=[
 'images/lipsinkers_promo_vid_2025.mp4',
 'images/lipsinkers_promo_vid_2019.mp4',
-'images/lipsinkers_gay_shame_26_3.jpg','images/lipsinkers_gay_shame_26_4.jpg','images/lipsinkers_gay_shame_26_5.jpg','images/lipsinkers_gay_shame_26_6.jpg','images/lipsinkers_two_brewers_bleach.jpg','images/lipsinkers_ramsgate.jpg','images/lipsinkers_laundry.jpg','images/lipsinkers_christmas_2019.jpg','images/lipsinkers_duckie_eagle.jpg','images/lipsinkers_colchester_arts_centre_2019.jpg','images/lipsinkers_mary_poppin_2019.jpg','images/lipsinkers_2018.jpg','images/lipsinkers_swirl.jpg','images/lipsinkers_edinburgh_2015.jpg','images/lipsinkers_evolution_poster.jpg','images/lipsinkers_guilty_pleasures_pulp.jpg','images/lipsinkers_guilty_pleasures_lisa_lee.jpg','images/lipsinkers_benefit_1.jpg','images/lipsinkers_benefit_2.jpg','images/lipsinkers_2014.jpg','images/lipsinkers_rvt.jpg','images/lipsinkers_simon_harris.jpg','images/lipsinkers_original.jpg'];
+'images/lipsinkers_gay_shame_26_3.jpg','images/lipsinkers_gay_shame_26_4.jpg','images/lipsinkers_gay_shame_26_5.jpg','images/lipsinkers_gay_shame_26_6.jpg','images/lipsinkers_two_brewers_bleach.jpg','images/lipsinkers_ramsgate.jpg','images/lipsinkers_laundry.jpg','images/lipsinkers_duckie_eagle.jpg','images/lipsinkers_christmas_2019.jpg','images/lipsinkers_colchester_arts_centre_2019.jpg','images/lipsinkers_mary_poppin_2019.jpg','images/lipsinkers_2018.jpg','images/lipsinkers_swirl.jpg','images/lipsinkers_edinburgh_2015.jpg','images/lipsinkers_evolution_poster.jpg','images/lipsinkers_guilty_pleasures_pulp.jpg','images/lipsinkers_guilty_pleasures_lisa_lee.jpg','images/lipsinkers_benefit_1.jpg','images/lipsinkers_benefit_2.jpg','images/lipsinkers_2014.jpg','images/lipsinkers_rvt.jpg','images/lipsinkers_simon_harris.jpg','images/lipsinkers_original.jpg'];
 let current=0;
 function show(){const f=gallery[current],img=document.getElementById('galleryImage'),vid=document.getElementById('galleryVideo');if(f.endsWith('.mp4')){img.style.display='none';vid.style.display='block';vid.src=f;}else{vid.pause();vid.style.display='none';img.style.display='block';img.src=f;}}
 function openGallery(i){current=i;show();document.getElementById('lightbox').classList.add('active');}
