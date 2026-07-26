@@ -692,7 +692,10 @@ display:none;
 
 <div class="press-card clickable" onclick="openPressReview('timeout')"><div class="press-main"><div class="press-quote">UTTERLY LEFTFIELD... BRILLIANTLY BONKERS ★★★★★</div><div class="press-source">TIME OUT</div></div><div class="press-arrow">→</div></div>
 
-<div class="press-card clickable"><div class="press-main"><div class="press-quote">Bloody hell, The LipSinkers are amazing</div><div class="press-source">THE GUARDIAN</div></div><div class="press-arrow">→</div></div>
+<div class="press-card static"><div class="press-main"><div class="press-quote">Bloody hell, The LipSinkers are amazing</div><div class="press-source">THE GUARDIAN</div></div></div>
+<div class="press-card clickable" onclick="openPressReview('adelaide')"><div class="press-main"><div class="press-quote">A DRAG DEMOLITION DERBY ★★★★</div><div class="press-source">THE ADELAIDE ADVERTISER</div></div><div class="press-arrow">→</div></div>
+<div class="press-card clickable" onclick="openPressReview('barefoot')"><div class="press-main"><div class="press-quote">AN IRRESISTIBLE FREAK OF NATURE ★★★★</div><div class="press-source">THE BAREFOOT REVIEW</div></div><div class="press-arrow">→</div></div>
+
 
 <div class="press-card static"><div class="press-main"><div class="press-quote">Possibly the most ridiculous, fun night out ever</div><div class="press-source">THE TIMES</div></div></div>
 <div class="press-card static"><div class="press-main"><div class="press-quote">Vagabond drag cabaret</div><div class="press-source">GRACE DENT, THE GUARDIAN</div></div></div>
@@ -821,8 +824,8 @@ const pressReviews={
 times:{
 title:"A Celebration of the Camp and the Crazy",
 stars:"★★★★★",
-subtitle:"Donald Hutera says LipSinkers do not just pay lip service to drag, they take it to a new level",
-body:`<p><strong>Evolution of the Fags, Liquid Room Annexe Double, Edinburgh Festival</strong></p></div>
+subtitle:"Evolution of the Fags, Liquid Room Annexe Double, Edinburgh Festival",
+body:`</div>
 <div class="press-body">
 <p>The official word is that there are 3,314 registered shows at the Fringe this year, of which 24 per cent are free (whether ticketed or non-ticketed). Although donations are welcome, you could swim for days in this sea of talent at little or no cost. Thus far I’ve hardly seen any of it. There is, however, one free performance that absolutely floats my boat.</p>
 <p>The LipSinkers are a London-based drag quintet comprised of four blokes and a woman who behaves just like her male counterparts. As incredibly manic and skilful practitioners of the art of lip-synching, their musical choices range from obscure and/or vintage Broadway show tunes to pop songs. They’re camp, cult and glorious mainly because they go for broke serving up what amounts to a generous string of full-blown mini-production numbers.</p>
@@ -833,13 +836,38 @@ body:`<p><strong>Evolution of the Fags, Liquid Room Annexe Double, Edinburgh Fes
 scotsman:{
 title:"Miming a Rich Seam of High Camp",
 stars:"★★★★★",
-subtitle:"The LipSinkers: Evolution of the Fags, Liquid Room Annexe",
+subtitle:"The LipSinkers: Evolution of the Fags, Liquid Room Annexe, Edinburgh Festival",
 body:`<p>The LipSinkers are a drag troupe who mime to pop songs. But their show isn't <em>A Night Out with Danny La Rue</em>. It's not <em>RuPaul's Drag Race</em>. And it's not for the mild at heart or the mess-averse. It's weird, wild, funny and fresh. It's a perpetual-motion machine of radical queer fun. It's low-budget, high-impact.</p><p>This five-strong troupe comes out of east London's alternative drag scene and the diversity of their influences shows in the different energy each performer brings to the stage, as well as their inventively outrageous outfits and unconventional song choices.</p><p>The show is studded with spectacular set-pieces... The troupe can also deliver regimented hoofing and high-octane burlesque—and they use stillness to powerful effect too.</p><p>An inflatable shark features prominently and, like a shark, the LipSinkers keep moving forward.</p><p>This passion for the possibilities of performance clearly fuels the machine, and it's the alchemy that transforms cheap clothes and pound-shop props into the stuff of fantasy.</p><div class="press-byline">Ben Walters, The Scotsman, 27 August 2015</div>`
 },
+},
+},
+adelaide:{
+title:"ADELAIDE FRINGE REVIEW 2019: THE LIPSINKERS",
+stars:"★★★★",
+subtitle:"Little Theatre, RCC, Adelaide Fringe",
+body:`<p>A drag demolition derby the likes of which Adelaide has never seen before, UK cabaret legends The LipSinkers deconstruct cross-dressing mythos and gender politics in an endlessly riotous display that can only be compared to a procession of exploding, glitter-filled peacocks.</p>
+<p>Divas of every imaginable size, body shape and foundation shade cast wigs and costumes about in an absolutely fabulous, frenzied display of comical choreography that almost belies its precision execution.</p>
+<p>Beards, bulges and buckets are mixed and matched with items of exquisite beauty, routines of classic elegance and eye-lashings of irony.</p>
+<p>The musical selections to which the artists synchronise their mouths and movements are as daggy as they are delightfully delicious, from Charles Aznavour ballads to Richard Burton narrating Jeff Wayne's <em>War of the Worlds</em>, and disco-fied Ethel Merman to melodramatic Meat Loaf.</p>
+<p>Rami Malek might even have to hand over his best actor Oscar after seeing The LipSinkers' recreation of Queen's <em>Bohemian Rhapsody</em> video, using nothing but penlight torches.</p>
+<p>By the end of the show, proceedings have erupted into a side-splitting dance party and the stage looks like Dame Edna Everage held a rummage sale.</p>
+<div class="press-byline">Patrick McDonald, The Adelaide Advertiser, 1 March 2019</div>`
+
+barefoot:{
+title:"THE LIPSINKERS",
+stars:"★★★★",
+subtitle:"Little Theatre, RCC, Adelaide Fringe",
+body:`<p>It’s difficult to categorise the LipSinkers. They are drag, they are queer, they are loud (oh so loud!), they are alternative, and they are completely over the top. They are all these things but on megadoses of supercharged steroids. They are so much larger than life that they give new meaning to the phrase. However you categorise them, they are just fabulous, and their show sucks you in with the overwhelming force of a show biz black-hole. The LipSinkers are an irresistible freak of nature!</p>
+<p><strong>Done. Enough of the superlatives</strong></p>
+<p>For an hour they ‘lip sync’ to a set list of songs without a break: some are obscure (you know you’ve heard it but where? when?) and some are well known, such as Queen’s iconic <em>Bohemian Rhapsody</em> and Abba’s <em>Waterloo</em>. As one song gives way to the next the constants are the troupe’s inventive break-neck pace choreography, their trashy costumes and even trashier wigs, their hilarious facial gestures and general antics, and of course their lip sync accuracy (scarily so!). It is exhausting and almost impossible to take it all in. It all happens with such rapidity that it is altogether dizzying.</p>
+<p>Despite all the antics and the slapstick humour, there is also a serious message. There isn’t a narrative as such to the selection or sequencing of the play list, but there is cutting social commentary. In one scene two of the troupe wear face masks of Rolf Harris and Cardinal George Pell while they bat away the ping pong balls of society’s disgust and accusations. It almost happens in the blink of an eye and one is left rapidly pondering how the current song choice ‘fits’, then it’s onto the next.</p>
+<p>By the end of the show, the stage is in absolute chaos with costumes and hand properties littering the entire space. One leaves the event shaking their head and asking oneself ‘what the hell was that all about?!’ Whatever the answer, one is glad the tsunami is past, but the smile on one’s face persists for some time.</p>
+<div class="press-byline">Kym Clayton, The Barefoot Review, 2 March 2019</div>`
+
 timeout:{
 title:"The LipSinkers",
 stars:"★★★★★",
-subtitle:"Time Out",
+subtitle:"Voodoo Rooms / Mood Nightclub, Edinburgh Fringe",
 body:`<p>Just what is it that makes the LipSinkers so different, so appealing? It's a hard thing to pin down but it basically comes down to high-octane queer exuberance of the first order.</p><p>Making their Fringe debut, this hilariously entertaining four-strong alternative drag troupe developed out of lip-syncing contests held a decade ago at Bistrotheque's experimental cabaret room.</p><p>The sensibility is utterly leftfield: the looks are brilliantly bonkers; the routines are tightly choreographed; the lip-synching is spot on; and the chemistry between Lisa Lee, Richardette, Rhyannon Styles and Blanche Dubois is affectionate and assured.</p><p>The extra special ingredients are the implicit politics and the sheer enjoyment at work. The LipSinkers are queer and loving it and my face aches from grinning when I watch them.</p><div class="press-byline">Ben Walters, Time Out, 20 August 2013</div>`
 }
 };
@@ -847,7 +875,7 @@ function openPressReview(id){
 const r=pressReviews[id];
 document.getElementById('pressTitle').innerHTML=r.title;
 document.getElementById('pressStars').textContent=r.stars;
-document.getElementById('pressSubtitle').textContent=r.subtitle;
+document.getElementById('pressSubtitle').innerHTML=r.subtitle;
 document.getElementById('pressBody').innerHTML=r.body;
 document.getElementById('pressPopup').classList.add('active');
 }
