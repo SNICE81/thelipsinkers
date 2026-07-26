@@ -439,11 +439,12 @@ display:none;
 .gallery-section{margin:20px 0;}
 .gallery-title{background:#ff3399;color:#000;font-size:24px;font-weight:bold;text-align:center;padding:10px;}
 
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px;}
-.gallery-grid .video-thumb{position:relative;cursor:pointer;aspect-ratio:4/3;overflow:hidden;}
-.gallery-grid .video-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
-.gallery-grid .video-thumb:after{content:'▶';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#fff;font-size:56px;text-shadow:0 0 8px #000;}
-.gallery-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:pointer;display:block;}
+.video-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;margin:10px 0 5px;}
+.video-thumb{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer;}
+.video-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.video-thumb::after{content:'▶';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:56px;text-shadow:0 0 8px #000;pointer-events:none;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.gallery-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;cursor:pointer;}
 @media(max-width:600px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
 .gallery-grid .video-thumb{grid-column:span 1;}
 
@@ -620,10 +621,13 @@ display:none;
 </div>
 
 <div id="gallery" class="gallery-section">
-<div class="gallery-grid">
-<div class="video-thumb" onclick="openGallery(2)"><video src="images/lipsinkers_promo_vid_2025.mp4" muted playsinline preload="metadata"></video></div>
-<div class="video-thumb" onclick="openGallery(3)"><video src="images/lipsinkers_promo_vid_2019.mp4" muted playsinline preload="metadata"></video></div>
 
+<div class="video-gallery">
+<div class="video-thumb" onclick="openGallery(0)"><img src="images/lipsinkers_promo_vid_2025_thumbnail.jpg" alt=""></div>
+<div class="video-thumb" onclick="openGallery(1)"><img src="images/lipsinkers_promo_vid_2019_thumbnail.jpg" alt=""></div>
+</div>
+
+<div class="gallery-grid">
 <img src="images/lipsinkers_gay_shame_26_3.jpg" onclick="openGallery(2)">
 <img src="images/lipsinkers_gay_shame_26_4.jpg" onclick="openGallery(3)">
 <img src="images/lipsinkers_gay_shame_26_5.jpg" onclick="openGallery(4)">
@@ -647,7 +651,6 @@ display:none;
 <img src="images/lipsinkers_rvt.jpg" onclick="openGallery(22)">
 <img src="images/lipsinkers_simon_harris.jpg" onclick="openGallery(23)">
 <img src="images/lipsinkers_original.jpg" onclick="openGallery(24)">
-</div>
 </div>
 
 <div class="gig-section">
