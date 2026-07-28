@@ -42,6 +42,19 @@ a:hover {
       z-index: 1000;
         }
 
+    /* Keep in-page navigation targets clear of the sticky header. */
+    :root {
+      --header-offset: 80px;
+    }
+
+    html {
+      scroll-padding-top: var(--header-offset);
+    }
+
+    .nav-target {
+      scroll-margin-top: var(--header-offset);
+    }
+
    .topnav {
       display: flex;
       align-items: center;
@@ -121,6 +134,16 @@ a:hover {
       height: auto;
       display: block;
       margin: 0;
+      padding: 0;
+    }
+
+    /* Centred GIFs shown at their intrinsic dimensions on every screen size. */
+    .main-content img.fixed-size-gif {
+      width: auto;
+      height: auto;
+      max-width: none;
+      display: block;
+      margin: 20px auto;
       padding: 0;
     }
     
@@ -584,10 +607,10 @@ display:none;
 
       <div id="navLinks">
         <a href="#live-dates">LIVE DATES</a>
-        <a href="#gallery">GALLERY</a>
-        <a href="/press.html">PRESS</a>
+        <a href="#gallery-videos">GALLERY</a>
+        <a href="#press">PRESS</a>
         <a href="https://thelipsinkers.sumupstore.com/" target="_blank" rel="noopener noreferrer">SHOP</a>
-        <a href="/contact.html">CONTACT</a>
+        <a href="#contact">CONTACT</a>
       </div>
 
       <div class="icon" onclick="toggleMenu()">
@@ -637,7 +660,7 @@ display:none;
   <img src="images/lipsinkers_gay_shame_26_1.jpg" alt="The LipSinkers performing" />
 </div>
 
-<div id="live-dates" class="gig-section">
+<div id="live-dates" class="gig-section nav-target">
 <div class="gig-heading">UPCOMING LIVE DATES</div>
 
 <a class="event-card" href="https://www.greenman.net/" target="_blank" rel="noopener noreferrer">
@@ -688,7 +711,7 @@ display:none;
 
 <div id="gallery" class="gallery-section">
 
-<div class="video-gallery">
+<div id="gallery-videos" class="video-gallery nav-target">
 <div class="video-thumb" onclick="openGallery(0)"><img src="images/lipsinkers_promo_vid_2025_thumbnail.jpg" alt=""></div>
 <div class="video-thumb" onclick="openGallery(1)"><img src="images/lipsinkers_promo_vid_2019_thumbnail.jpg" alt=""></div>
 </div>
@@ -720,6 +743,7 @@ display:none;
 <img src="images/lipsinkers_original.jpg" onclick="openGallery(25)">
 </div>
 
+<img id="press" class="fixed-size-gif nav-target" src="images/rhys_newspaper.gif" alt="Rhys reading a newspaper">
 
 <div class="press-section">
 <div class="press-heading">PRESS</div>
@@ -744,6 +768,8 @@ display:none;
 <div class="press-card static"><div class="press-main"><div class="press-quote">You can't get more fabulous or alternative than The LipSinkers</div><div class="press-source">QX MAGAZINE</div></div></div>
 
 </div>
+
+<img id="contact" class="fixed-size-gif nav-target" src="images/thom_reading.gif" alt="Thom reading">
 
 <div class="gig-section">
 
@@ -789,9 +815,31 @@ display:none;
 
 
   <script>
+    function setHeaderOffset() {
+      const header = document.querySelector('.header');
+      const clearance = 16;
+      if (header) {
+        document.documentElement.style.setProperty(
+          '--header-offset',
+          `${header.offsetHeight + clearance}px`
+        );
+      }
+    }
+
     function toggleMenu() {
       document.getElementById("topnav").classList.toggle("responsive");
+      setHeaderOffset();
     }
+
+    document.querySelectorAll('#navLinks a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById("topnav").classList.remove("responsive");
+        setHeaderOffset();
+      });
+    });
+
+    setHeaderOffset();
+    window.addEventListener('resize', setHeaderOffset);
   </script>
 
 <div class="lightbox" id="lightbox">
