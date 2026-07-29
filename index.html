@@ -137,6 +137,17 @@ a:hover {
       padding: 0;
     }
 
+    .main-content img.t-shirt-ad {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .contact-photo {
+      width: 127.5px !important;
+    }
+
     /* Centred GIFs shown at their intrinsic dimensions on every screen size. */
     .main-content img.fixed-size-gif {
       width: auto;
@@ -274,18 +285,28 @@ a:hover {
       margin-bottom: 15px;
     }
 
+    .review-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 18px;
+      flex-wrap: nowrap;
+      margin-bottom: 18px;
+    }
+
     .review {
       text-align: center;
-      margin-bottom: 18px;
+      margin-bottom: 0;
+      min-width: 0;
     }
 
     .review .stars {
       display: block;
       margin: 0 0 1px 0;
       color: #ffff33;
-      font-size: 44px;
+      font-size: 26px;
       font-weight: bold;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     line-height:0.9;}
 
     .review .attribution {
@@ -422,6 +443,19 @@ a:hover {
   .column {
     width: 100%;
   }
+
+  .review-row {
+    gap: 8px;
+  }
+
+  .review .stars {
+    font-size: 18px;
+    letter-spacing: 0;
+  }
+
+  .review .attribution {
+    font-size: 11px;
+  }
 }
   
 
@@ -521,7 +555,7 @@ display:none;
         text-align:center;
     }
     .contact-photo{
-        width:240px !important;
+        width:180px !important;
         max-width:80%;
         margin:0 auto 24px;
     }
@@ -635,19 +669,21 @@ display:none;
       <div class="section-link yellow">
         <div class="testimonial">
 
-          <div class="review">
-            <div class="stars">★★★★★</div>
-            <div class="attribution">THE TIMES</div>
-          </div>
+          <div class="review-row">
+            <div class="review">
+              <div class="stars">★★★★★</div>
+              <div class="attribution">THE TIMES</div>
+            </div>
 
-          <div class="review">
-            <div class="stars">★★★★★</div>
-            <div class="attribution">THE SCOTSMAN</div>
-          </div>
+            <div class="review">
+              <div class="stars">★★★★★</div>
+              <div class="attribution">THE SCOTSMAN</div>
+            </div>
 
-          <div class="review">
-            <div class="stars">★★★★★</div>
-            <div class="attribution">TIME OUT</div>
+            <div class="review">
+              <div class="stars">★★★★★</div>
+              <div class="attribution">TIME OUT</div>
+            </div>
           </div>
 
           <span class="quote">"In their hands, drag and character and gender and theatre squelch and writhe together, spilling across the room, gesturing towards unknown pleasures and leaving a glorious mess"</span>
@@ -705,7 +741,7 @@ display:none;
 
 <div class="image-container">
   <a href="https://thelipsinkers.sumupstore.com/" target="_blank" rel="noopener noreferrer">
-    <img src="images/lipsinkers_t_shirt_ad.jpg" alt="The LipSinkers T-Shirts" />
+    <img class="t-shirt-ad" src="images/lipsinkers_t_shirt_ad.jpg" alt="The LipSinkers T-Shirts" />
   </a>
 </div>
 
