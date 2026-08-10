@@ -469,6 +469,14 @@ a:hover {
 .event-title{font-size:24px;font-weight:bold;letter-spacing:1px;color:#ff3399;}
 .event-location{margin-top:4px;color:#fff;font-size:16px;}
 .event-arrow{color:#ff3399;font-size:34px;font-weight:bold;}
+.previous-card{cursor:pointer;display:flex !important;}
+.previous-card .event-title,.previous-card .event-arrow{color:#33ccff !important;}
+.previous-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:6500;align-items:center;justify-content:center;padding:20px;}
+.previous-popup.active{display:flex;}
+.previous-popup-content{background:#000;color:#fff;width:600px;max-width:calc(100vw - 40px);padding:30px;position:relative;max-height:90vh;overflow:auto;}
+.previous-close{position:absolute;top:10px;right:18px;font-size:42px;color:#fff;font-weight:bold;line-height:1;cursor:pointer;}
+.previous-popup h2{font-family:Helvetica,sans-serif;font-size:30px;line-height:1.05;margin:0 46px 20px 0;color:#33ccff;text-transform:uppercase;}
+.previous-list{color:#fff;font-size:16px;line-height:1.7;text-align:justify;}
 @media(max-width:600px){
 .event-card{
 display:block;
@@ -708,6 +716,15 @@ display:none;
 <div class="event-arrow">→</div>
 </a>
 
+  <a class="event-card" href="https://www.tickettailor.com/events/ramsgatefestivalofsound1/2305314?date=2026-09-12" target="_blank" rel="noopener noreferrer">
+<div class="event-date">FRI 12 SEPT</div>
+<div class="event-info">
+<div class="event-title">FESTIVAL OF SOUND</div>
+<div class="event-location">Winterstoke Gardens, Ramsgate</div>
+</div>
+<div class="event-arrow">→</div>
+</a>
+
 <a class="event-card" href="https://www.outsavvy.com/event/35762/the-lipsinkers-at-two-brewers" target="_blank" rel="noopener noreferrer">
 <div class="event-date">FRI 25 SEP</div>
 <div class="event-info">
@@ -734,6 +751,13 @@ display:none;
 </div>
 <div class="event-arrow">→</div>
 </a>
+
+<div class="event-card previous-card" role="button" tabindex="0" onclick="openPrevious()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPrevious();}">
+<div class="event-info">
+<div class="event-title">WHERE WE'VE BEEN</div>
+</div>
+<div class="event-arrow">→</div>
+</div>
 
 </div>
 
@@ -932,6 +956,20 @@ popup.addEventListener("click",(e)=>{if(e.target===popup) popup.classList.remove
 </script>
 
 
+
+<div class="previous-popup" id="previousPopup">
+  <div class="previous-popup-content">
+    <span class="previous-close" onclick="closePrevious()">&times;</span>
+    <h2>WHERE WE'VE BEEN</h2>
+    <div class="previous-list">Ace Hotel (London) / Adelaide Fringe Festival (Australia) / Apple Cart Festival / The Archway Tavern / Arnolfini (Bristol) / Attenborough Centre (Brighton) / Bankside Space / Bar Music Hall / Barbican Theatre (Plymouth) / Battersea Barge / Bedraggled / Bethnal Green Working Men’s Club / Bestival / Bistrotheque / Bizarre Ball / The Black Rabbit Cabaret (Dublin) / Bloc Bar / Brighton Pride / British Art Show (Leeds) / BBC Pink Tent / Bush Hall / Boiler House (Newcastle) / Butlins / Cafe De Paris (London) / Camp Bestival / Camp &amp; Furnace (Liverpool) / Chelsea Theatre / Colchester Arts Centre / Contact (Manchester) / The Courtyard Theatre / Dalston Boys Club / Dead Dolls Club / Diversity Role Models Summer Party / Dogstar / Duckie / East Bloc / East Dulwich Tavern / Edinburgh Fringe Festival / Electric Theatre (Galway, Ireland) / Electric Brixton / FLESH (Liverpool) / Firestation Arts Centre (Windsor) / Firstsite (Colchester) / Glastonbury Festival / The Great Drag Race / Green Man Festival / Green Room (Manchester) / Gulbenkian Arts Centre (Canterbury) / Hackney Attic / Hackney Empire / Hogmanay Street Party (Edinburgh) / Home (Manchester) / Homotopia (Liverpool) / Hot August Fringe / KOKO / King's Head Theatre / Komedia (Brighton) / Knebworth / Ku Bar / The Labour Party Conference / Latitude Festival / London Bridge Summer Festival / London Wonderground / Loulou's / Lulu Guinness London Fashion Week / Lost Theatre / The Mac (Birmingham) / Madame Jojo's / Marylebone Gardens / The Marlborough Theatre (Brighton) / Matt Lucas’s Wedding / Metalworks / Modern Art Oxford / Museum of London / Outburst Festival (Belfast) / Punk &amp; Judy, Margate / The Magic Roundabout / Mildmay Club / Nambucca / The Pleasance Dome (Edinburgh) / Prado (Sitges, Spain) / Queen of Hoxton / OXJAM / The RAC Club / Rich Mix / Royal Academy of Art / Royal Festival Hall / Royal Vauxhall Tavern / Shambala / Sheffield Doc Fest / Shoreditch Town Hall / Southbank Centre / Shout Festival (Birmingham) / The Spiegeltent / Spill Festival / Swansea University / Soho Theatre / Southbank Centre / Summer Rites / Two Brewers / Underbelly Festival / The Troxy / Two Brewers / Unity (Liverpool) / V&amp;A Museum / Volupte / Voodoo Rooms (Edinburgh) / The Wallace Collection / The Water Rats / Wilton’s Music Hall / Winterville and lots more events, clubs, parties and happenings!</div>
+  </div>
+</div>
+<script>
+function openPrevious(){document.getElementById('previousPopup').classList.add('active');}
+function closePrevious(){document.getElementById('previousPopup').classList.remove('active');}
+document.getElementById('previousPopup').addEventListener('click',function(e){if(e.target===this)closePrevious();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closePrevious();});
+</script>
 
 <div class="press-popup" id="pressPopup">
 <div class="press-popup-content">
